@@ -100,4 +100,13 @@ public class InternalCadastroUsuarioHelper {
         view.getjTextEstado3().setText("");
         
     }  
+    
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+     
 }

@@ -45,6 +45,7 @@ public class InternalCadastroFabricante extends javax.swing.JInternalFrame {
         jSeparator7 = new javax.swing.JSeparator();
         jLabel66 = new javax.swing.JLabel();
         jTextEstado3 = new javax.swing.JTextField();
+        jTextBairro3 = new javax.swing.JTextField();
         jTextCep3 = new javax.swing.JTextField();
         jLabel67 = new javax.swing.JLabel();
         jTextRua3 = new javax.swing.JTextField();
@@ -54,7 +55,6 @@ public class InternalCadastroFabricante extends javax.swing.JInternalFrame {
         jLabel69 = new javax.swing.JLabel();
         jLabel70 = new javax.swing.JLabel();
         jLabel71 = new javax.swing.JLabel();
-        jTextBairro3 = new javax.swing.JTextField();
 
         jLabel62.setText("Cnpj:");
 
@@ -124,16 +124,14 @@ public class InternalCadastroFabricante extends javax.swing.JInternalFrame {
                             .addComponent(jLabel64)
                             .addGroup(jPanelCadastroUsuario6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addGroup(jPanelCadastroUsuario6Layout.createSequentialGroup()
-                                    .addGroup(jPanelCadastroUsuario6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanelCadastroUsuario6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addGroup(jPanelCadastroUsuario6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(jPanelCadastroUsuario6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                             .addComponent(jTextCidade3, javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(jPanelCadastroUsuario6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addGroup(jPanelCadastroUsuario6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                                    .addComponent(jTextBairro3, javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addComponent(jTextRua3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                .addComponent(jLabel66)))
-                                        .addComponent(jLabel69, javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jLabel68, javax.swing.GroupLayout.Alignment.LEADING))
+                                            .addComponent(jTextBairro3, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(jLabel69)
+                                        .addComponent(jLabel68)
+                                        .addComponent(jTextRua3, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jLabel66))
                                     .addGap(25, 25, 25)
                                     .addGroup(jPanelCadastroUsuario6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addComponent(jLabel71)
@@ -171,33 +169,31 @@ public class InternalCadastroFabricante extends javax.swing.JInternalFrame {
                 .addComponent(jLabel63)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator7, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanelCadastroUsuario6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanelCadastroUsuario6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addGroup(jPanelCadastroUsuario6Layout.createSequentialGroup()
-                            .addComponent(jLabel67)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addGroup(jPanelCadastroUsuario6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addGroup(jPanelCadastroUsuario6Layout.createSequentialGroup()
-                                    .addComponent(jTextNumero3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(54, 54, 54))
-                                .addGroup(jPanelCadastroUsuario6Layout.createSequentialGroup()
-                                    .addComponent(jLabel71)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(jTextCep3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGap(65, 65, 65))
-                        .addGroup(jPanelCadastroUsuario6Layout.createSequentialGroup()
-                            .addComponent(jLabel70)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(jTextEstado3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanelCadastroUsuario6Layout.createSequentialGroup()
-                        .addComponent(jLabel66)
+                        .addGap(131, 131, 131)
+                        .addComponent(jLabel70)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextRua3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel68)
-                        .addGap(5, 5, 5)
-                        .addComponent(jTextBairro3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jTextEstado3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanelCadastroUsuario6Layout.createSequentialGroup()
+                        .addGap(17, 17, 17)
+                        .addGroup(jPanelCadastroUsuario6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanelCadastroUsuario6Layout.createSequentialGroup()
+                                .addComponent(jLabel67)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jTextNumero3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jLabel71)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jTextCep3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanelCadastroUsuario6Layout.createSequentialGroup()
+                                .addComponent(jLabel66)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jTextRua3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jLabel68)
+                                .addGap(5, 5, 5)
+                                .addComponent(jTextBairro3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel69)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -322,36 +318,9 @@ public class InternalCadastroFabricante extends javax.swing.JInternalFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButtonCadastrar3;
-    private javax.swing.JButton jButtonCadastrar4;
-    private javax.swing.JButton jButtonCadastrar5;
     private javax.swing.JButton jButtonCadastrar6;
-    private javax.swing.JButton jButtonLimpar3;
-    private javax.swing.JButton jButtonLimpar4;
-    private javax.swing.JButton jButtonLimpar5;
     private javax.swing.JButton jButtonLimpar6;
-    private javax.swing.JButton jButtonSair1;
-    private javax.swing.JButton jButtonSair2;
-    private javax.swing.JButton jButtonSair3;
     private javax.swing.JButton jButtonSair4;
-    private javax.swing.JLabel jLabel43;
-    private javax.swing.JLabel jLabel44;
-    private javax.swing.JLabel jLabel45;
-    private javax.swing.JLabel jLabel46;
-    private javax.swing.JLabel jLabel47;
-    private javax.swing.JLabel jLabel48;
-    private javax.swing.JLabel jLabel49;
-    private javax.swing.JLabel jLabel50;
-    private javax.swing.JLabel jLabel51;
-    private javax.swing.JLabel jLabel52;
-    private javax.swing.JLabel jLabel53;
-    private javax.swing.JLabel jLabel54;
-    private javax.swing.JLabel jLabel55;
-    private javax.swing.JLabel jLabel56;
-    private javax.swing.JLabel jLabel57;
-    private javax.swing.JLabel jLabel58;
-    private javax.swing.JLabel jLabel59;
-    private javax.swing.JLabel jLabel60;
     private javax.swing.JLabel jLabel62;
     private javax.swing.JLabel jLabel63;
     private javax.swing.JLabel jLabel64;
@@ -362,36 +331,15 @@ public class InternalCadastroFabricante extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel69;
     private javax.swing.JLabel jLabel70;
     private javax.swing.JLabel jLabel71;
-    private javax.swing.JPanel jPanelCadastroUsuario3;
-    private javax.swing.JPanel jPanelCadastroUsuario4;
-    private javax.swing.JPanel jPanelCadastroUsuario5;
     private javax.swing.JPanel jPanelCadastroUsuario6;
-    private javax.swing.JSeparator jSeparator4;
-    private javax.swing.JSeparator jSeparator5;
-    private javax.swing.JSeparator jSeparator6;
     private javax.swing.JSeparator jSeparator7;
-    private javax.swing.JSpinner jSpinnerQuantidade;
-    private javax.swing.JSpinner jSpinnerQuantidade1;
-    private javax.swing.JSpinner jSpinnerQuantidade2;
     private javax.swing.JTextField jTextBairro3;
     private javax.swing.JTextField jTextCep3;
     private javax.swing.JTextField jTextCidade3;
     private javax.swing.JTextField jTextEstado3;
-    private javax.swing.JTextField jTextFabricante;
-    private javax.swing.JTextField jTextFabricante1;
-    private javax.swing.JTextField jTextFabricante2;
     private javax.swing.JTextField jTextNomeFab;
-    private javax.swing.JTextField jTextNomeProd;
-    private javax.swing.JTextField jTextNomeProd1;
-    private javax.swing.JTextField jTextNomeProd2;
     private javax.swing.JTextField jTextNumero3;
-    private javax.swing.JTextField jTextPrecoCusto;
-    private javax.swing.JTextField jTextPrecoCusto1;
-    private javax.swing.JTextField jTextPrecoCusto2;
     private javax.swing.JTextField jTextPrecoCusto3;
-    private javax.swing.JTextField jTextPrecoVenda;
-    private javax.swing.JTextField jTextPrecoVenda1;
-    private javax.swing.JTextField jTextPrecoVenda2;
     private javax.swing.JTextField jTextRua3;
     // End of variables declaration//GEN-END:variables
 }

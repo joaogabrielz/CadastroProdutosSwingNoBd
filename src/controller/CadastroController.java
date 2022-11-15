@@ -50,6 +50,7 @@ public class CadastroController {
 
       if(usuarioExtistente != null ){ // == null nao achou
          view.exibeMsg("Usuario ja cadastrado no sistema");
+          helperCadastro.setId(helperCadastro.getId() -1);
       }
       else{
          usuarioDAO.insert(usuario);

@@ -44,11 +44,12 @@ public class InternalCadastroFabricanteController {
              
       
       if(fabricanteExistente != null ){ // == null nao achou
-         view.exibeMsg("Usuario ja cadastrado no sistema");
+         view.exibeMsg("Fabricante ja cadastrado no sistema");
+         helperInterCadFabric.setId(helperInterCadFabric.getId() -1);
       }
       else{
          produtoDAO.insert(produto);
-         view.exibeMsg("Produto " + produto.getNome() + " Cadastrado com sucesso!");
+         view.exibeMsg("Fabricante " + produto.getNome() + " Cadastrado com sucesso!");
       }
     }
     

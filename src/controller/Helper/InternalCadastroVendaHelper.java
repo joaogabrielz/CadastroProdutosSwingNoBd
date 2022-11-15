@@ -80,6 +80,16 @@ public class InternalCadastroVendaHelper {
         view.getjTextDataVenda().setText("");
       //  view.getjTextValorTotal().setText("");
         view.getjTextProduto().setText("");
+        view.getjSpinnerQuantidade().setValue(0);
         
     }  
+     
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+     
 }

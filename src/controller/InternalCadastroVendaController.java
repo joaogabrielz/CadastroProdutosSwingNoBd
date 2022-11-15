@@ -36,6 +36,10 @@ public class InternalCadastroVendaController {
     }
     
      
+    public void diminuiId(){
+       helperInterCadVenda.setId(helperInterCadVenda.getId() -1);
+    }
+     
      public void cadastrarNoSistema() {
          
       Venda venda = helperInterCadVenda.obterModeloVenda();
@@ -48,10 +52,12 @@ public class InternalCadastroVendaController {
    
        if(venda.getQtd() > venda.getProduto().getQtd()){
          view.exibeMsg("Erro: Quantidade de Produtos menor que qtd a Vender");
+         this.diminuiId();
          return;
        }
        if(venda.getQtd() <= 0){
           view.exibeMsg("Erro: Quantidade 0 ou abaixo");
+          this.diminuiId();
          return;
        }
     
@@ -68,12 +74,14 @@ public class InternalCadastroVendaController {
          }
          else{
            view.exibeMsg("Produto a Vender nao existente, confira ou cadastre-os");
+           this.diminuiId();
          }
           
         
       }
       else{
            view.exibeMsg("Produto ou Usuario nao existentes, confira ou cadastre-os");
+           this.diminuiId();
       }
        
      }

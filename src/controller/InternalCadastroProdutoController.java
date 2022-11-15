@@ -44,6 +44,7 @@ public class InternalCadastroProdutoController {
       
         if(produtoExistente != null ){ // == null nao achou
            view.exibeMsg("Produto ja cadastrado no sistema");
+           helperInterCadProd.setId(helperInterCadProd.getId() -1);
         }
         else{
            produtoDAO.insert(produto);

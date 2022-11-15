@@ -51,11 +51,10 @@ public class Banco {
             
         //Adiciona elementos na lista
         usuario.add(usuarioAdm);
-        usuario.add(usuario1);
         
+        usuario.add(usuario1);       
         fabricante.add(fab1);
         produto.add(prod1);
-      
         venda.add(ven1);
         
         //endereco
