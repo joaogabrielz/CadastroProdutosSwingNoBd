@@ -162,7 +162,7 @@ public class InternalListagemProdutos extends javax.swing.JInternalFrame {
         DefaultTableModel dtm = (DefaultTableModel)jTable1.getModel();
 
         if (jTable1.getSelectedRow() >= 0){
-            int opt = JOptionPane.showInternalConfirmDialog(null, "Tem certeza que Excluir este item?");
+            int opt = JOptionPane.showConfirmDialog(null, "Tem certeza que Excluir este item?");
             if(opt == 0){
 
                 this.controller.excluir(dtm.getValueAt(jTable1.getSelectedRow(), 0).toString()); // id

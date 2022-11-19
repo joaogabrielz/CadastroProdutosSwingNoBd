@@ -32,6 +32,15 @@ public class InternalCadastroController {
          this.view.dispose();
     }
     
+    public void diminuiId(){
+       helperInterCadastro.setId(helperInterCadastro.getId() -1);
+    }
+    
+     public void incrementaId() {
+        helperInterCadastro.setId(helperInterCadastro.getId() +1);
+    }
+    
+    
     public void cadastrarNoSistema(){
         
       Usuario usuario = helperInterCadastro.obterModeloCadastro();
@@ -43,12 +52,11 @@ public class InternalCadastroController {
       
 
       if(usuarioExtistente != null ){ // == null nao achou
-         view.exibeMsg("Usuario ja cadastrado no sistema");
-         helperInterCadastro.setId(helperInterCadastro.getId() -1);
-         
+         view.exibeMsg("Usuario ja cadastrado no sistema");        
       }
       else{
          usuarioDAO.insert(usuario);
+         this.incrementaId();
          view.exibeMsg("Usuario " + usuario.getNome() + " Cadastrado com sucesso!");
       }
     }

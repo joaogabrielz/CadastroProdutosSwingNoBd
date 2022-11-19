@@ -37,17 +37,17 @@ public class Banco {
         
         // PARA TESTES: 
         
-        Usuario usuario1 = new Usuario(1, "joao", "jaum", "jao123", 23, 33344, 
+        Usuario usuario1 = new Usuario(1, "joao", "jaum", "jao123", 23, "33344", 
                 0, "caixa", "263", "790042163", "campo grande", "MS", "piraci");
      
         
         Fabricante fab1 = new Fabricante(1, "nestle", "444", 1, "caixa", "263", "790042163", "campo grande", "MS", "piraci");
         
-        Produto prod1 = new Produto(1, "cafe", fab1, "20", "50", 4);
+        Produto prod1 = new Produto(1, "cafe", fab1, 20.00, 50.50, 4);
         
         
         
-        Venda ven1 = new Venda(prod1, "50", "10/12/22", 1, usuario1, 1);
+        Venda ven1 = new Venda(prod1, 50.50, "10/12/22", 1, usuario1, 1);
             
         //Adiciona elementos na lista
         usuario.add(usuarioAdm);

@@ -60,8 +60,8 @@ public class InternalListagemProdutosController {
               produtosBanco.get(i).getNome(),
               produtosBanco.get(i).getFabricante().getNome(),
               produtosBanco.get(i).getFabricante().getCnpj(),
-              produtosBanco.get(i).getPreco_custo(),
-              produtosBanco.get(i).getPreco_venda(),
+              produtosBanco.get(i).getPreco_custo().toString(),
+              produtosBanco.get(i).getPreco_venda().toString(),
               produtosBanco.get(i).getQtd().toString(),
 
             });

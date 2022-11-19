@@ -59,7 +59,7 @@ public class UsuarioDAO {
                      Banco.usuario.set(i, v);
                      return true;
                  case "Cpf":
-                     v.setCpf(Integer.parseInt(DataNewValue));
+                     v.setCpf(DataNewValue);
                      Banco.usuario.set(i, v);
                      return true;
                  case "Rua":

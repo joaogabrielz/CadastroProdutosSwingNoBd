@@ -13,8 +13,8 @@ public class Produto {
     private Integer id;
     private String nome;
     private Fabricante fabricante;
-    private String preco_custo;
-    private String preco_venda;
+    private Double preco_custo;
+    private Double preco_venda;
     private Integer qtd;
 
     
@@ -23,7 +23,7 @@ public class Produto {
 //    }
     
     
-    public Produto(Integer id, String nome, Fabricante fabricante, String preco_custo, String preco_venda, Integer qtd) {
+    public Produto(Integer id, String nome, Fabricante fabricante, Double preco_custo, Double preco_venda, Integer qtd) {
         this.id = id;
         this.nome = nome;
         this.fabricante = fabricante;
@@ -33,10 +33,6 @@ public class Produto {
     }
 
 
-    
-    
-    
-    
     public Integer getId() {
         return id;
     }
@@ -61,19 +57,19 @@ public class Produto {
         this.fabricante = fabricante;
     }
 
-    public String getPreco_custo() {
+    public Double getPreco_custo() {
         return preco_custo;
     }
 
-    public void setPreco_custo(String preco_custo) {
+    public void setPreco_custo(Double preco_custo) {
         this.preco_custo = preco_custo;
     }
 
-    public String getPreco_venda() {
+    public Double getPreco_venda() {
         return preco_venda;
     }
 
-    public void setPreco_venda(String preco_venda) {
+    public void setPreco_venda(Double preco_venda) {
         this.preco_venda = preco_venda;
     }
 

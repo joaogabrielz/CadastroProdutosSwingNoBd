@@ -76,11 +76,14 @@ public class MenuPrincipalController {
         cadVenda.setVisible(true);
     }
     
-    public void logout(){
+    public void logout(int opt){
+
+        if(opt == 0){
+            Login telaLogin = new Login();
+            this.view.dispose();
+            telaLogin.setVisible(true);       
+        }
         
-        Login telaLogin = new Login();
-        telaLogin.setVisible(true);
-        this.view.dispose();
     }
     
     public void navegarListagemUsuario(){          

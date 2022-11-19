@@ -24,6 +24,9 @@ public class InternalCadastroVendaController {
     
         this.view = view;
         this.helperInterCadVenda = new InternalCadastroVendaHelper(view); // 
+        
+        helperInterCadVenda.preencheComboBoxUsuario();
+        helperInterCadVenda.preencheComboBoxProduto();
     }
     
     
@@ -39,6 +42,11 @@ public class InternalCadastroVendaController {
     public void diminuiId(){
        helperInterCadVenda.setId(helperInterCadVenda.getId() -1);
     }
+    
+    public void incrementaId() {
+        helperInterCadVenda.setId(helperInterCadVenda.getId() +1);
+    }
+    
      
      public void cadastrarNoSistema() {
          
@@ -50,38 +58,35 @@ public class InternalCadastroVendaController {
        Produto produtoExistente = prodDao.selectPorNomeEFabricante(venda.getProduto());
               
    
-       if(venda.getQtd() > venda.getProduto().getQtd()){
+       if(venda.getQtd() > produtoExistente.getQtd()){
          view.exibeMsg("Erro: Quantidade de Produtos menor que qtd a Vender");
-         this.diminuiId();
          return;
        }
        if(venda.getQtd() <= 0){
           view.exibeMsg("Erro: Quantidade 0 ou abaixo");
-          this.diminuiId();
          return;
        }
     
-        if(produtoExistente != null && venda.getProduto().getQtd() > 0){
-         VendaDAO vendaDao = new VendaDAO();
+            if(produtoExistente != null && venda.getProduto().getQtd() > 0){
+             VendaDAO vendaDao = new VendaDAO();
 
 
-        int qtd = prodDao.diminuiQtdOuExclui(produtoExistente, venda.getQtd());
-
-
-         view.exibeMsg("Venda de " + venda.getProduto().getNome() + " Feita com sucesso com sucesso!");
-         vendaDao.insert(venda);
-
-         }
-         else{
-           view.exibeMsg("Produto a Vender nao existente, confira ou cadastre-os");
-           this.diminuiId();
-         }
+            int qtd = prodDao.diminuiQtdOuExclui(produtoExistente, venda.getQtd());
+            if(qtd == 0){
+                helperInterCadVenda.preencheComboBoxProduto();
+            }
+             view.exibeMsg("Venda de " + venda.getProduto().getNome() + " Feita com sucesso com sucesso!");
+             vendaDao.insert(venda);
+             this.incrementaId();       
+             }
+             else{
+               view.exibeMsg("Produto a Vender nao existente, confira ou cadastre-os");
+             }
           
         
       }
       else{
-           view.exibeMsg("Produto ou Usuario nao existentes, confira ou cadastre-os");
-           this.diminuiId();
+          view.exibeMsg("Porfavor preenhca todos os campos corretamente");
       }
        
      }

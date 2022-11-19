@@ -59,7 +59,7 @@ public class InternalListagemVendasController {
               vendasBanco.get(i).getId().toString(),
               vendasBanco.get(i).getProduto().getNome(),
               vendasBanco.get(i).getQtd().toString(),
-              vendasBanco.get(i).getValor_total(),
+              vendasBanco.get(i).getValor_total().toString(),
               vendasBanco.get(i).getData_venda(),
               vendasBanco.get(i).getUsuario().getNome(),
                   

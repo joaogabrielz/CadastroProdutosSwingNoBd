@@ -5,18 +5,10 @@
  */
 package view;
 
-import controller.CadastroController;
-import controller.InternalCadastroController;
 import controller.MenuPrincipalController;
-import java.util.ArrayList;
-import java.util.List;
 import javax.swing.JDesktopPane;
-import javax.swing.JLayeredPane;
 import javax.swing.JMenuBar;
 import javax.swing.JOptionPane;
-import javax.swing.JPanel;
-import javax.swing.JTextField;
-import model.Usuario;
 
 /**
  *
@@ -270,10 +262,10 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
     private void jMenu3MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu3MousePressed
         // TODO add your handling code here:
-        int opt = JOptionPane.showInternalConfirmDialog(null, "Tem certeza que deseja sair?");
-        if(opt == 0){
-          this.controller.logout();  
-        }      
+        int opt = JOptionPane.showConfirmDialog(null, "Tem certeza que deseja sair?");
+//        if(opt == 0){
+          this.controller.logout(opt);  
+//        }      
     }//GEN-LAST:event_jMenu3MousePressed
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed

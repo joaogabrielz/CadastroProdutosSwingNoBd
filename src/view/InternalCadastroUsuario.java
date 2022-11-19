@@ -75,15 +75,15 @@ public class InternalCadastroUsuario extends javax.swing.JInternalFrame {
 
         jLabel43.setText("Sobrenome:");
 
-        jLabel44.setText("Idade(Numeric):");
+        jLabel44.setText("Idade:");
 
-        jLabel45.setText("CPF(Numeric):");
+        jLabel45.setText("CPF:");
 
         jLabel46.setText("Endereço");
 
         jLabel47.setText("Rua:");
 
-        jLabel48.setText("Numero");
+        jLabel48.setText("Numero:");
 
         jLabel49.setText("Cadastro de Usuario");
 
@@ -145,19 +145,18 @@ public class InternalCadastroUsuario extends javax.swing.JInternalFrame {
                                                 .addGroup(jPanelCadastroUsuario3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                                     .addComponent(jTextNome3, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                     .addComponent(jLabel54, javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanelCadastroUsuario3Layout.createSequentialGroup()
-                                                        .addComponent(jLabel44)
-                                                        .addGap(18, 18, 18)
-                                                        .addComponent(jLabel45)))
-                                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanelCadastroUsuario3Layout.createSequentialGroup()
-                                                    .addComponent(jTextIdade3, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                    .addGap(18, 18, 18)
-                                                    .addComponent(jTextCpf4, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                    .addComponent(jLabel44, javax.swing.GroupLayout.Alignment.LEADING))
                                                 .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanelCadastroUsuario3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                                     .addComponent(jTextCidade3, javax.swing.GroupLayout.Alignment.LEADING)
                                                     .addComponent(jTextBairro3, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE))
                                                 .addComponent(jLabel51, javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addComponent(jLabel50, javax.swing.GroupLayout.Alignment.LEADING))
+                                                .addComponent(jLabel50, javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanelCadastroUsuario3Layout.createSequentialGroup()
+                                                    .addComponent(jTextIdade3, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addGap(18, 18, 18)
+                                                    .addGroup(jPanelCadastroUsuario3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                        .addComponent(jLabel45)
+                                                        .addComponent(jTextCpf4, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE))))
                                             .addComponent(jTextRua3, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addComponent(jLabel47))
                                         .addGap(25, 25, 25)
@@ -173,12 +172,9 @@ public class InternalCadastroUsuario extends javax.swing.JInternalFrame {
                                                 .addComponent(jTextSobrenome3, javax.swing.GroupLayout.PREFERRED_SIZE, 325, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addGroup(jPanelCadastroUsuario3Layout.createSequentialGroup()
                                                     .addGroup(jPanelCadastroUsuario3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelCadastroUsuario3Layout.createSequentialGroup()
-                                                            .addComponent(jTextLogin3, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                            .addGap(18, 18, 18))
-                                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelCadastroUsuario3Layout.createSequentialGroup()
-                                                            .addComponent(jLabel55)
-                                                            .addGap(141, 141, 141)))
+                                                        .addComponent(jTextLogin3, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                        .addComponent(jLabel55))
+                                                    .addGap(18, 18, 18)
                                                     .addGroup(jPanelCadastroUsuario3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                                         .addComponent(jLabel56)
                                                         .addComponent(jTextSenha3, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
@@ -228,19 +224,17 @@ public class InternalCadastroUsuario extends javax.swing.JInternalFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanelCadastroUsuario3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addGroup(jPanelCadastroUsuario3Layout.createSequentialGroup()
-                        .addGroup(jPanelCadastroUsuario3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jTextNumero3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanelCadastroUsuario3Layout.createSequentialGroup()
-                                .addComponent(jLabel48)
-                                .addGap(30, 30, 30)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel48)
+                        .addGap(43, 43, 43)
                         .addComponent(jLabel53)
                         .addGap(5, 5, 5)
                         .addComponent(jTextCep3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanelCadastroUsuario3Layout.createSequentialGroup()
                         .addComponent(jLabel47)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextRua3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanelCadastroUsuario3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jTextRua3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextNumero3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel50)
                         .addGap(5, 5, 5)

@@ -93,15 +93,18 @@ public class ProdutoDAO {
         
 //        for(Produto p : Banco.produto){
 
-            if(qtdAVender < produto.getQtd()){
-               produto.setQtd(produto.getQtd() - qtdAVender);                       
-            }
             if(qtdAVender == produto.getQtd()){
                delete(produto);
+               return 0;
             }
-            if(produto.getQtd() <= 0 && produto.getQtd() != null){
-                delete(produto);
-            }   
+            else if(qtdAVender < produto.getQtd()){
+               produto.setQtd(produto.getQtd() - qtdAVender);
+               return 1;
+            }
+           
+//            if(produto.getQtd() <= 0 && produto.getQtd() != null){
+//                delete(produto);
+//            }   
       //  }
       
       return 0;
@@ -124,11 +127,11 @@ public class ProdutoDAO {
                      Banco.produto.set(i, v);
                      return true;
                  case "Preco_Custo":
-                     v.setPreco_custo(DataNewValue);
+                     v.setPreco_custo(Double.parseDouble(DataNewValue));
                      Banco.produto.set(i, v);
                      return true;
                  case "Preco_Venda":
-                     v.setPreco_venda(DataNewValue);
+                     v.setPreco_venda(Double.parseDouble(DataNewValue));
                      Banco.produto.set(i, v);
                      return true;
                  case "Qtd":

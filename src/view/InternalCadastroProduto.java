@@ -5,6 +5,7 @@
 package view;
 
 import controller.InternalCadastroProdutoController;
+import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
 import javax.swing.JSpinner;
 import javax.swing.JTextField;
@@ -21,7 +22,7 @@ public class InternalCadastroProduto extends javax.swing.JInternalFrame {
     
     public InternalCadastroProduto() {
         initComponents();
-         this.controller = new InternalCadastroProdutoController(this);
+        this.controller = new InternalCadastroProdutoController(this);
     }
 
     /**
@@ -37,7 +38,6 @@ public class InternalCadastroProduto extends javax.swing.JInternalFrame {
         jSpinnerQuantidade = new javax.swing.JSpinner();
         jTextNomeProd = new javax.swing.JTextField();
         jLabel43 = new javax.swing.JLabel();
-        jTextFabricanteNome = new javax.swing.JTextField();
         jLabel44 = new javax.swing.JLabel();
         jLabel45 = new javax.swing.JLabel();
         jTextPrecoCusto = new javax.swing.JTextField();
@@ -51,6 +51,7 @@ public class InternalCadastroProduto extends javax.swing.JInternalFrame {
         jLabel56 = new javax.swing.JLabel();
         jLabel46 = new javax.swing.JLabel();
         jTextFabricanteCnpj = new javax.swing.JTextField();
+        jComboBoxNomeFab = new javax.swing.JComboBox<>();
 
         jLabel43.setText("Nome Fabricante:");
 
@@ -92,9 +93,17 @@ public class InternalCadastroProduto extends javax.swing.JInternalFrame {
 
         jLabel46.setText("Cnpj Fabricante:");
 
+        jTextFabricanteCnpj.setEnabled(false);
         jTextFabricanteCnpj.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextFabricanteCnpjActionPerformed(evt);
+            }
+        });
+
+        jComboBoxNomeFab.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBoxNomeFab.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBoxNomeFabActionPerformed(evt);
             }
         });
 
@@ -105,6 +114,9 @@ public class InternalCadastroProduto extends javax.swing.JInternalFrame {
             .addGroup(jPanelCadastroUsuario3Layout.createSequentialGroup()
                 .addGap(15, 15, 15)
                 .addGroup(jPanelCadastroUsuario3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanelCadastroUsuario3Layout.createSequentialGroup()
+                        .addComponent(jLabel54)
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(jPanelCadastroUsuario3Layout.createSequentialGroup()
                         .addComponent(jButtonSair1, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
@@ -117,29 +129,25 @@ public class InternalCadastroProduto extends javax.swing.JInternalFrame {
                         .addContainerGap())
                     .addGroup(jPanelCadastroUsuario3Layout.createSequentialGroup()
                         .addGroup(jPanelCadastroUsuario3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanelCadastroUsuario3Layout.createSequentialGroup()
-                                .addComponent(jLabel43)
-                                .addGap(64, 64, 64)
-                                .addComponent(jLabel46))
                             .addComponent(jLabel49)
                             .addGroup(jPanelCadastroUsuario3Layout.createSequentialGroup()
-                                .addGroup(jPanelCadastroUsuario3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(jTextFabricanteNome, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel45, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jLabel44, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jTextPrecoCusto, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTextPrecoVenda, javax.swing.GroupLayout.Alignment.LEADING))
-                                .addGap(43, 43, 43)
                                 .addGroup(jPanelCadastroUsuario3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jLabel56, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jSpinnerQuantidade)
-                                    .addComponent(jTextFabricanteCnpj, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(jPanelCadastroUsuario3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addGroup(jPanelCadastroUsuario3Layout.createSequentialGroup()
-                                    .addComponent(jLabel54)
-                                    .addGap(227, 227, 227))
-                                .addComponent(jTextNomeProd, javax.swing.GroupLayout.PREFERRED_SIZE, 325, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                                    .addComponent(jLabel45, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel44, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jTextPrecoCusto)
+                                    .addComponent(jTextPrecoVenda)
+                                    .addComponent(jLabel43))
+                                .addGap(39, 39, 39)
+                                .addGroup(jPanelCadastroUsuario3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel46)
+                                    .addGroup(jPanelCadastroUsuario3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(jLabel56, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(jSpinnerQuantidade)
+                                        .addComponent(jTextFabricanteCnpj, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addGroup(jPanelCadastroUsuario3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(jComboBoxNomeFab, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jTextNomeProd, javax.swing.GroupLayout.DEFAULT_SIZE, 325, Short.MAX_VALUE)))
+                        .addContainerGap(381, Short.MAX_VALUE))))
         );
         jPanelCadastroUsuario3Layout.setVerticalGroup(
             jPanelCadastroUsuario3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -151,28 +159,31 @@ public class InternalCadastroProduto extends javax.swing.JInternalFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jTextNomeProd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addGroup(jPanelCadastroUsuario3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanelCadastroUsuario3Layout.createSequentialGroup()
-                        .addComponent(jLabel43)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextFabricanteNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanelCadastroUsuario3Layout.createSequentialGroup()
-                        .addComponent(jLabel46)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextFabricanteCnpj, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addComponent(jLabel43)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jComboBoxNomeFab, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addGroup(jPanelCadastroUsuario3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanelCadastroUsuario3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanelCadastroUsuario3Layout.createSequentialGroup()
                         .addComponent(jLabel44)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanelCadastroUsuario3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextPrecoCusto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jSpinnerQuantidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(jLabel56))
-                .addGap(18, 18, 18)
-                .addComponent(jLabel45)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextPrecoVenda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jTextPrecoCusto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel45)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jTextPrecoVenda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanelCadastroUsuario3Layout.createSequentialGroup()
+                        .addGroup(jPanelCadastroUsuario3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanelCadastroUsuario3Layout.createSequentialGroup()
+                                .addComponent(jLabel46)
+                                .addGap(30, 30, 30))
+                            .addComponent(jTextFabricanteCnpj, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanelCadastroUsuario3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanelCadastroUsuario3Layout.createSequentialGroup()
+                                .addGap(24, 24, 24)
+                                .addComponent(jSpinnerQuantidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel56))))
                 .addGap(18, 18, 18)
                 .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 138, Short.MAX_VALUE)
@@ -231,6 +242,13 @@ public class InternalCadastroProduto extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextFabricanteCnpjActionPerformed
 
+    private void jComboBoxNomeFabActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxNomeFabActionPerformed
+        // TODO add your handling code here:
+        if(evt.getActionCommand().equals("comboBoxChanged") && this.controller != null){
+            this.controller.preencheCnpjWithFabricante();
+        }
+    }//GEN-LAST:event_jComboBoxNomeFabActionPerformed
+
     public JSpinner getjSpinnerQuantidade() {
         return jSpinnerQuantidade;
     }
@@ -239,13 +257,6 @@ public class InternalCadastroProduto extends javax.swing.JInternalFrame {
         this.jSpinnerQuantidade = jSpinnerQuantidade;
     }
 
-    public JTextField getjTextFabricante() {
-        return jTextFabricanteNome;
-    }
-
-    public void setjTextFabricante(JTextField jTextFabricante) {
-        this.jTextFabricanteNome = jTextFabricante;
-    }
 
     public JTextField getjTextNomeProd() {
         return jTextNomeProd;
@@ -271,13 +282,6 @@ public class InternalCadastroProduto extends javax.swing.JInternalFrame {
         this.jTextFabricanteCnpj = jTextFabricanteCnpj;
     }
 
-    public JTextField getjTextFabricanteNome() {
-        return jTextFabricanteNome;
-    }
-
-    public void setjTextFabricanteNome(JTextField jTextFabricanteNome) {
-        this.jTextFabricanteNome = jTextFabricanteNome;
-    }
 
     public JTextField getjTextPrecoVenda() {
         return jTextPrecoVenda;
@@ -287,12 +291,21 @@ public class InternalCadastroProduto extends javax.swing.JInternalFrame {
         this.jTextPrecoVenda = jTextPrecoVenda;
     }
 
+    public JComboBox<String> getjComboBoxNomeFab() {
+        return jComboBoxNomeFab;
+    }
+
+    public void setjComboBoxNomeFab(JComboBox<String> jComboBoxNomeFab) {
+        this.jComboBoxNomeFab = jComboBoxNomeFab;
+    }
+
 
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonCadastrar3;
     private javax.swing.JButton jButtonLimpar3;
     private javax.swing.JButton jButtonSair1;
+    private javax.swing.JComboBox<String> jComboBoxNomeFab;
     private javax.swing.JLabel jLabel43;
     private javax.swing.JLabel jLabel44;
     private javax.swing.JLabel jLabel45;
@@ -304,7 +317,6 @@ public class InternalCadastroProduto extends javax.swing.JInternalFrame {
     private javax.swing.JSeparator jSeparator4;
     private javax.swing.JSpinner jSpinnerQuantidade;
     private javax.swing.JTextField jTextFabricanteCnpj;
-    private javax.swing.JTextField jTextFabricanteNome;
     private javax.swing.JTextField jTextNomeProd;
     private javax.swing.JTextField jTextPrecoCusto;
     private javax.swing.JTextField jTextPrecoVenda;

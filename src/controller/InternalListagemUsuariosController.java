@@ -61,7 +61,7 @@ public class InternalListagemUsuariosController {
         
        for (int i = 1; i < usuariosBanco.size(); i++) {
            String idadeStr = String.format("%d", usuariosBanco.get(i).getIdade());
-           String CpfStr = String.format("%d", usuariosBanco.get(i).getCpf());
+        //   String CpfStr = String.format("%d", usuariosBanco.get(i).getCpf());
 //           Integer.toString(usuariosBanco.get(i).getIdade());
            
           //  modelo.addRow(new String[] {String.valueOf(i), });
@@ -70,7 +70,7 @@ public class InternalListagemUsuariosController {
               usuariosBanco.get(i).getNome(),
               usuariosBanco.get(i).getLogin(),
               idadeStr,
-              CpfStr,
+              usuariosBanco.get(i).getCpf(),
               usuariosBanco.get(i).getRua(),
               usuariosBanco.get(i).getNumero(),
               usuariosBanco.get(i).getCep(),

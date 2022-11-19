@@ -138,6 +138,16 @@ public class FabricanteDAO {
         }
         return null;
     }
+    
+    public Fabricante selectPorNome(String nomeFab){
+        
+        for(Fabricante fabLista : Banco.fabricante){
+            if(fabLista.getNome().equals(nomeFab)){
+                return fabLista;
+            }
+        }
+       return null;
+    }
 
     /**
      * Recebe dois objetos e verifica se são iguais verificando o nome e senha

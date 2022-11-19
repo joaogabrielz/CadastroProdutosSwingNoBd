@@ -14,7 +14,7 @@ import model.DAO.Banco;
 public class Venda {
     
     private Produto produto;
-    private String valor_total;
+    private Double valor_total;
     private String data_venda;
     private Integer id;
     private Usuario usuario;
@@ -27,7 +27,7 @@ public class Venda {
 //    }
     
     
-    public Venda(Produto produto, String valor_total, String data_venda, Integer id, Usuario usuario, Integer qtd) {
+    public Venda(Produto produto, Double valor_total, String data_venda, Integer id, Usuario usuario, Integer qtd) {
         
         this.produto = produto; 
         
@@ -41,11 +41,11 @@ public class Venda {
     
     
 
-    public String getValor_total() {
+    public Double getValor_total() {
         return valor_total;
     }
 
-    public void setValor_total(String valor_total) {
+    public void setValor_total(Double valor_total) {
         this.valor_total = valor_total;
     }
 

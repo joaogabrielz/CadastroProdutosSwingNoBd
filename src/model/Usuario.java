@@ -12,7 +12,7 @@ public class Usuario extends Endereco{
     private String login;
     private String senha;
     private Integer idade;
-    private Integer cpf;
+    private String cpf;
 
     
     //Sobrecarga de construtores
@@ -26,7 +26,7 @@ public class Usuario extends Endereco{
         this.senha = senha;
     }
                  
-    public Usuario(Integer id, String nome, String login, String senha, Integer idade, Integer cpf,
+    public Usuario(Integer id, String nome, String login, String senha, Integer idade, String cpf,
             
         //Herda de endereco  
      Integer id_End, String rua_End, String num_End, 
@@ -82,11 +82,11 @@ public class Usuario extends Endereco{
         this.idade = idade;
     }
 
-    public Integer getCpf() {
+    public String getCpf() {
         return cpf;
     }
 
-    public void setCpf(Integer cpf) {
+    public void setCpf(String cpf) {
         this.cpf = cpf;
     }
 

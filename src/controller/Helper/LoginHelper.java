@@ -20,11 +20,24 @@ public class LoginHelper {
     
     
     public Usuario obterModelo(){
+    try {
        String nome = view.getjTextFieldLogin().getText();
        String senha = view.getjPasswordFieldSenha().getText();
        
-       Usuario modelo = new Usuario(1, nome, senha);
-       return modelo;
+       if(nome != "" && senha != ""){
+            Usuario modelo = new Usuario(1, nome, senha);
+            return modelo;
+       }
+       else{
+         view.exibeMsg("Campos nao podem ficar vazios!"); 
+         return null;   
+       }  
+        } 
+        catch (Exception e) {
+            System.out.println(e); 
+            view.exibeMsg("Ops algo deu errado, porfavor verifique os dados!");
+            return null;  
+        }
     }
     
     public void setarModelo(Usuario modelo){

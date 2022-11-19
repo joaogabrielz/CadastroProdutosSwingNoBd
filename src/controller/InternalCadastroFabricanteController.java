@@ -32,6 +32,14 @@ public class InternalCadastroFabricanteController {
          this.view.dispose();
     }
     
+    public void diminuiId(){
+       helperInterCadFabric.setId(helperInterCadFabric.getId() -1);
+    }
+    
+    public void incrementaId() {
+        helperInterCadFabric.setId(helperInterCadFabric.getId() +1);
+    }
+    
     public void cadastrarNoSistema(){
         
       Fabricante produto = helperInterCadFabric.obterModeloCadastro();
@@ -45,10 +53,10 @@ public class InternalCadastroFabricanteController {
       
       if(fabricanteExistente != null ){ // == null nao achou
          view.exibeMsg("Fabricante ja cadastrado no sistema");
-         helperInterCadFabric.setId(helperInterCadFabric.getId() -1);
       }
       else{
          produtoDAO.insert(produto);
+         this.incrementaId();
          view.exibeMsg("Fabricante " + produto.getNome() + " Cadastrado com sucesso!");
       }
     }

@@ -4,7 +4,11 @@
  */
 package controller.Helper;
 
+import java.util.ArrayList;
+import java.util.List;
+import javax.swing.DefaultComboBoxModel;
 import model.DAO.ProdutoDAO;
+import model.DAO.UsuarioDAO;
 import model.DAO.VendaDAO;
 import model.Produto;
 import model.Usuario;
@@ -18,7 +22,7 @@ import view.InternalCadastroVenda;
 public class InternalCadastroVendaHelper {
     
     private final InternalCadastroVenda view;
-    private Integer id = 1;
+    private Integer id = 2;
 
     public InternalCadastroVendaHelper(InternalCadastroVenda view) {
         this.view = view;
@@ -27,62 +31,129 @@ public class InternalCadastroVendaHelper {
     
     public Venda obterModeloVenda(){
 
-       //venda
-        String nomeUsuarioVenda = view.getjTextUsuarioVenda().getText();
-        String dataVenda = view.getjTextDataVenda().getText();
+    try {
+              //venda
+      //  String nomeUsuarioVenda = view.getjTextUsuarioVenda().getText();
+      
       //  String valorTotalVenda = view.getjTextValorTotal().getText();
-        String produtoVenda = view.getjTextProduto().getText();
-        
+     //   String produtoVenda = view.getjTextProduto().getText();
+     
+     
+       Object nomeUsuarioVenda =  view.getjComboBoxUsuarioName().getSelectedItem();
+       Object produtoVenda =  view.getjComboBoxProdutoName().getSelectedItem();
+       
+       String dataVenda = view.getjTextDataVenda().getText();
+
        Integer quantidadeAVender =  (Integer) view.getjSpinnerQuantidade().getValue();
         
-       VendaDAO vendaDao = new VendaDAO();
+       if(nomeUsuarioVenda.toString() != "Selecione um Usuario"  && produtoVenda.toString() != "Selecione um Usuario" 
+               && dataVenda != ""  
+               && quantidadeAVender > 0)
+       {
+           
+        VendaDAO vendaDao = new VendaDAO();
        
-       Produto produtoExitente = vendaDao.selectPorNomeProduto(produtoVenda);
-       Usuario usuarioExistente = vendaDao.selectPorNomeUsuario(nomeUsuarioVenda);
+       Produto produtoExitente = vendaDao.selectPorNomeProduto(produtoVenda.toString());
+       Usuario usuarioExistente = vendaDao.selectPorNomeUsuario(nomeUsuarioVenda.toString());
        
        if(produtoExitente != null && usuarioExistente != null){
            
  
         if(quantidadeAVender <= produtoExitente.getQtd()){
-            
-        this.id++;        
-       // String valorProdutoVenda = String.format("%d", (Integer.parseInt(produtoExitente.getPreco_venda()) * produtoExitente.getQtd()));        
-      //  Integer valorTotalVendaProduto = Integer.parseInt(valorProdutoVenda);
-       
-       // String valorProdutoVenda = produtoExitente.getPreco_venda();
-       
-        String valorProdutoVenda = String.format("%d", (Integer.parseInt(produtoExitente.getPreco_venda()) * quantidadeAVender));
+
+        Double valorProdutoVenda = produtoExitente.getPreco_venda() * quantidadeAVender;
                 
         Venda modelo = new Venda(produtoExitente, valorProdutoVenda, dataVenda, id, usuarioExistente, quantidadeAVender);
                       
         return modelo;
             
         }
-        else if(quantidadeAVender > produtoExitente.getQtd()){
-         this.id++;           
-         String valorProdutoVenda = String.format("%d", (Integer.parseInt(produtoExitente.getPreco_venda()) * quantidadeAVender));
-                
-         Venda modelo = new Venda(produtoExitente, valorProdutoVenda, dataVenda, id, usuarioExistente, quantidadeAVender);
-                      
-         return modelo; // quantidadeAVender > modelo.getProduto.getQtd faco if no controllerVenda
-            
+        else{
+          view.exibeMsg("Quantidade a vender nao pode ser maior que quantiade de produtos");  
         }
+//        else if(quantidadeAVender > produtoExitente.getQtd()){          
+//            
+//         Double valorProdutoVenda = produtoExitente.getPreco_venda() * quantidadeAVender;    
+//
+//         Venda modelo = new Venda(produtoExitente, valorProdutoVenda, dataVenda, id, usuarioExistente, quantidadeAVender);
+//                      
+//         return modelo; // quantidadeAVender > modelo.getProduto.getQtd faco if no controllerVenda
+//            
+//        }
              
        }
-            
-     return null; 
+           
+       }
+       else{
+         view.exibeMsg("Campos nao podem ficar vazios!"); 
+         return null;    
+       }
+       
+       
+       
+        }        
+       catch (Exception e) {
+            System.out.println(e); 
+            view.exibeMsg("Ops algo deu errado, porfavor verifique os dados!");
+            return null;  
+      }
+       
+      return null;   
     }
     
     
      public void limparTelaCadastro(){
         
-        view.getjTextUsuarioVenda().setText("");
+     //   view.getjTextUsuarioVenda().setText("");
+        view.getjComboBoxUsuarioName().setSelectedIndex(0);
         view.getjTextDataVenda().setText("");
       //  view.getjTextValorTotal().setText("");
-        view.getjTextProduto().setText("");
+     //   view.getjTextProduto().setText("");
+     view.getjComboBoxProdutoName().setSelectedIndex(0);
         view.getjSpinnerQuantidade().setValue(0);
         
     }  
+     
+    public void preencheComboBoxUsuario() {
+      
+    // limpa
+    DefaultComboBoxModel comboModel = (DefaultComboBoxModel) view.getjComboBoxUsuarioName().getModel();
+    comboModel.removeAllElements();
+    comboModel.addElement("Selecione um Usuario");
+    
+    //fabricantes array pega do banco
+    List<Usuario> usuariosBd = new ArrayList();
+        
+    UsuarioDAO userDao = new UsuarioDAO();
+    usuariosBd.addAll(userDao.selectAll());
+           
+    for (int i = 1; i < usuariosBd.size(); i++) {
+        
+        String userName = usuariosBd.get(i).getNome();
+        comboModel.addElement(userName);
+    }    
+    }
+    
+      
+    public void preencheComboBoxProduto() {
+      
+    // limpa
+    DefaultComboBoxModel comboModel = (DefaultComboBoxModel) view.getjComboBoxProdutoName().getModel();
+    comboModel.removeAllElements();
+    comboModel.addElement("Selecione um Produto");
+    
+    //fabricantes array pega do banco
+    List<Produto> produtosBd = new ArrayList();
+        
+    ProdutoDAO prodDao = new ProdutoDAO();
+    produtosBd.addAll(prodDao.selectAll());
+           
+    for (int i = 0; i < produtosBd.size(); i++) {
+        
+        String prodName = produtosBd.get(i).getNome();
+        comboModel.addElement(prodName);
+    }    
+    }
      
     public Integer getId() {
         return id;

@@ -14,7 +14,7 @@ import view.InternalCadastroFabricante;
 public class InternalCadastroFabricanteHelper {
     
     private final InternalCadastroFabricante view;
-    private Integer id =1;
+    private Integer id = 2;
 
     public InternalCadastroFabricanteHelper(InternalCadastroFabricante view) {
         this.view = view;
@@ -22,6 +22,7 @@ public class InternalCadastroFabricanteHelper {
     
      public Fabricante obterModeloCadastro(){
 
+      try {
        //Fabricante
        String nomeFab =  view.getjTextNomeFab().getText();
        String CnpjFab =  view.getjTextCnpjFab().getText();    
@@ -31,14 +32,28 @@ public class InternalCadastroFabricanteHelper {
        String CepFab =  view.getjTextCep3().getText();
        String CidadeFab =  view.getjTextCidade3().getText();
        String EstadoFab =  view.getjTextEstado3().getText();
-
-       this.id++;
-   
-   
-       Fabricante modelo = new Fabricante(id, nomeFab, CnpjFab, id, RuaFab, NumeroFab, 
+       
+       if(nomeFab != ""  && CnpjFab != ""  && RuaFab != ""  && NumeroFab != ""  &&
+               BairroFab != ""  && CepFab != ""  && CidadeFab != ""  && EstadoFab != "" )
+       {
+           
+        Fabricante modelo = new Fabricante(id, nomeFab, CnpjFab, id, RuaFab, NumeroFab, 
                                 CepFab, CidadeFab, EstadoFab, BairroFab);
-       return modelo;
-     
+        return modelo;
+           
+       }
+       else{
+         view.exibeMsg("Campos nao podem ficar vazios!"); 
+         return null;  
+       }
+       
+       } 
+         
+      catch (Exception e) {
+           System.out.println(e);  
+           view.exibeMsg("Ops algo deu errado, porfavor verifique os dados!");     
+           return null;  
+      }
     }
     
     public void setarModeloCadastro(Fabricante modelo){

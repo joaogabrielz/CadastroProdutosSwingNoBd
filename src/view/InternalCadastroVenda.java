@@ -5,6 +5,7 @@
 package view;
 
 import controller.InternalCadastroVendaController;
+import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
 import javax.swing.JSpinner;
 import javax.swing.JTextField;
@@ -34,7 +35,6 @@ public class InternalCadastroVenda extends javax.swing.JInternalFrame {
     private void initComponents() {
 
         jPanelCadastroUsuario3 = new javax.swing.JPanel();
-        jTextUsuarioVenda = new javax.swing.JTextField();
         jLabel43 = new javax.swing.JLabel();
         jTextDataVenda = new javax.swing.JTextField();
         jLabel45 = new javax.swing.JLabel();
@@ -42,10 +42,11 @@ public class InternalCadastroVenda extends javax.swing.JInternalFrame {
         jButtonCadastrar3 = new javax.swing.JButton();
         jButtonSair1 = new javax.swing.JButton();
         jLabel54 = new javax.swing.JLabel();
-        jTextProduto = new javax.swing.JTextField();
         jButtonLimpar3 = new javax.swing.JButton();
         jSpinnerQuantidade = new javax.swing.JSpinner();
         jLabel56 = new javax.swing.JLabel();
+        jComboBoxProdutoName = new javax.swing.JComboBox<>();
+        jComboBoxUsuarioName = new javax.swing.JComboBox<>();
 
         jLabel43.setText("Data Venda:");
 
@@ -83,6 +84,15 @@ public class InternalCadastroVenda extends javax.swing.JInternalFrame {
 
         jLabel56.setText("Quantidade:");
 
+        jComboBoxProdutoName.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        jComboBoxUsuarioName.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBoxUsuarioName.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBoxUsuarioNameActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanelCadastroUsuario3Layout = new javax.swing.GroupLayout(jPanelCadastroUsuario3);
         jPanelCadastroUsuario3.setLayout(jPanelCadastroUsuario3Layout);
         jPanelCadastroUsuario3Layout.setHorizontalGroup(
@@ -90,6 +100,9 @@ public class InternalCadastroVenda extends javax.swing.JInternalFrame {
             .addGroup(jPanelCadastroUsuario3Layout.createSequentialGroup()
                 .addGap(15, 15, 15)
                 .addGroup(jPanelCadastroUsuario3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanelCadastroUsuario3Layout.createSequentialGroup()
+                        .addComponent(jComboBoxUsuarioName, javax.swing.GroupLayout.PREFERRED_SIZE, 325, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 377, Short.MAX_VALUE))
                     .addGroup(jPanelCadastroUsuario3Layout.createSequentialGroup()
                         .addComponent(jButtonSair1, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
@@ -99,35 +112,33 @@ public class InternalCadastroVenda extends javax.swing.JInternalFrame {
                         .addGap(21, 21, 21))
                     .addGroup(jPanelCadastroUsuario3Layout.createSequentialGroup()
                         .addGroup(jPanelCadastroUsuario3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanelCadastroUsuario3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addGroup(jPanelCadastroUsuario3Layout.createSequentialGroup()
-                                    .addGroup(jPanelCadastroUsuario3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jLabel54)
-                                        .addComponent(jLabel43))
-                                    .addGap(245, 245, 245))
-                                .addComponent(jTextUsuarioVenda, javax.swing.GroupLayout.PREFERRED_SIZE, 325, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel49)
+                            .addGroup(jPanelCadastroUsuario3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                 .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanelCadastroUsuario3Layout.createSequentialGroup()
-                                    .addGroup(jPanelCadastroUsuario3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(jLabel45, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jTextProduto, javax.swing.GroupLayout.DEFAULT_SIZE, 102, Short.MAX_VALUE))
+                                    .addGroup(jPanelCadastroUsuario3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(jPanelCadastroUsuario3Layout.createSequentialGroup()
+                                            .addComponent(jLabel45, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addGap(0, 0, Short.MAX_VALUE))
+                                        .addComponent(jComboBoxProdutoName, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                     .addGap(18, 18, 18)
                                     .addGroup(jPanelCadastroUsuario3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                         .addComponent(jLabel56, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addComponent(jSpinnerQuantidade, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addComponent(jTextDataVenda, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jLabel49))
-                        .addContainerGap(377, Short.MAX_VALUE))))
+                            .addComponent(jLabel54)
+                            .addComponent(jLabel43))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         jPanelCadastroUsuario3Layout.setVerticalGroup(
             jPanelCadastroUsuario3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelCadastroUsuario3Layout.createSequentialGroup()
                 .addGap(18, 18, 18)
                 .addComponent(jLabel49)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 19, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addComponent(jLabel54)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextUsuarioVenda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addComponent(jComboBoxUsuarioName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE)
                 .addComponent(jLabel43)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jTextDataVenda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -136,7 +147,7 @@ public class InternalCadastroVenda extends javax.swing.JInternalFrame {
                     .addGroup(jPanelCadastroUsuario3Layout.createSequentialGroup()
                         .addComponent(jLabel45)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextProduto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jComboBoxProdutoName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 244, Short.MAX_VALUE)
                         .addGroup(jPanelCadastroUsuario3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jButtonCadastrar3)
@@ -203,6 +214,10 @@ public class InternalCadastroVenda extends javax.swing.JInternalFrame {
         this.controller.limpar();
     }//GEN-LAST:event_jButtonLimpar3ActionPerformed
 
+    private void jComboBoxUsuarioNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxUsuarioNameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBoxUsuarioNameActionPerformed
+
     public JTextField getjTextDataVenda() {
         return jTextDataVenda;
     }
@@ -211,27 +226,32 @@ public class InternalCadastroVenda extends javax.swing.JInternalFrame {
         this.jTextDataVenda = jTextDataVenda;
     }
 
-    public JTextField getjTextProduto() {
-        return jTextProduto;
+    public JComboBox<String> getjComboBoxProdutoName() {
+        return jComboBoxProdutoName;
     }
 
-    public void setjTextProduto(JTextField jTextProduto) {
-        this.jTextProduto = jTextProduto;
+    public void setjComboBoxProdutoName(JComboBox<String> jComboBoxProdutoName) {
+        this.jComboBoxProdutoName = jComboBoxProdutoName;
     }
 
-    public JTextField getjTextUsuarioVenda() {
-        return jTextUsuarioVenda;
+    public JComboBox<String> getjComboBoxUsuarioName() {
+        return jComboBoxUsuarioName;
     }
 
-    public void setjTextUsuarioVenda(JTextField jTextUsuarioVenda) {
-        this.jTextUsuarioVenda = jTextUsuarioVenda;
+    public void setjComboBoxUsuarioName(JComboBox<String> jComboBoxUsuarioName) {
+        this.jComboBoxUsuarioName = jComboBoxUsuarioName;
     }
+
+    
+    
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonCadastrar3;
     private javax.swing.JButton jButtonLimpar3;
     private javax.swing.JButton jButtonSair1;
+    private javax.swing.JComboBox<String> jComboBoxProdutoName;
+    private javax.swing.JComboBox<String> jComboBoxUsuarioName;
     private javax.swing.JLabel jLabel43;
     private javax.swing.JLabel jLabel45;
     private javax.swing.JLabel jLabel49;
@@ -240,7 +260,5 @@ public class InternalCadastroVenda extends javax.swing.JInternalFrame {
     private javax.swing.JPanel jPanelCadastroUsuario3;
     private javax.swing.JSpinner jSpinnerQuantidade;
     private javax.swing.JTextField jTextDataVenda;
-    private javax.swing.JTextField jTextProduto;
-    private javax.swing.JTextField jTextUsuarioVenda;
     // End of variables declaration//GEN-END:variables
 }

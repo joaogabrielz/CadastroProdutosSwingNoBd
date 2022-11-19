@@ -17,7 +17,7 @@ public class InternalCadastroUsuarioHelper {
     
     
     private final InternalCadastroUsuario view;
-    private Integer id = 1;
+    private Integer id = 2;
 
     public InternalCadastroUsuarioHelper(InternalCadastroUsuario view) {
         this.view = view;
@@ -26,10 +26,10 @@ public class InternalCadastroUsuarioHelper {
      
    public Usuario obterModeloCadastro(){
 
+       try {
        //usuario
        String nome =  view.getjTextNome3().getText();
        String sobrenome =  view.getjTextSobrenome3().getText();
-       String nomeCompleto = (nome + " " + sobrenome);
        
        String idade =  view.getjTextIdade3().getText();
        String cpf =  view.getjTextCpf4().getText();
@@ -44,15 +44,35 @@ public class InternalCadastroUsuarioHelper {
        String cidade =  view.getjTextCidade3().getText();
        String estado =  view.getjTextEstado3().getText();
        
-       this.id++;
        Integer idadeN = Integer.parseInt(idade);
-       Integer cpfN = Integer.parseInt(cpf);
-       
-       Usuario modelo = new Usuario(this.id, nomeCompleto, login, senha, idadeN, cpfN,
+//       Integer cpfN = Integer.parseInt(cpf);
+
+
+        if(nome != "" && sobrenome != ""   && idade != ""  && cpf != ""  && login != "" 
+              && senha != "" 
+              && rua != ""  && numeroRua != ""  &&
+               bairro != ""  && cep != ""  && cidade != ""  && estado != "" )
+       {
+           
+        String nomeCompleto = (nome + " " + sobrenome);
+         Usuario modelo = new Usuario(this.id, nomeCompleto, login, senha, idadeN, cpf,
                this.id, rua, numeroRua, cep, cidade, estado, bairro);
-          
-       
+         
        return modelo;
+       }
+        else{
+         view.exibeMsg("Campos nao podem ficar vazios!"); 
+         return null;  
+            
+        }
+       
+     
+       }  
+        catch (Exception e) {
+            System.out.println(e); 
+            view.exibeMsg("Ops algo deu errado, porfavor verifique os dados!");
+            return null;  
+      }
     }
    
     
@@ -60,7 +80,7 @@ public class InternalCadastroUsuarioHelper {
       //  Integer idUs = modelo.getId();
         String nomeCompleto = modelo.getNome();
         Integer idade = modelo.getIdade();
-        Integer cpf = modelo.getCpf();
+        String cpf = modelo.getCpf();
         String login = modelo.getLogin();
         String senha = modelo.getSenha();
         String rua = modelo.getRua();
