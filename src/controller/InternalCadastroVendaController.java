@@ -5,6 +5,8 @@
 package controller;
 
 import controller.Helper.InternalCadastroVendaHelper;
+import java.util.ArrayList;
+import javax.swing.table.DefaultTableModel;
 import model.DAO.ProdutoDAO;
 import model.DAO.VendaDAO;
 import model.Produto;
@@ -19,6 +21,8 @@ public class InternalCadastroVendaController {
  
     private InternalCadastroVendaHelper helperInterCadVenda; //
     private InternalCadastroVenda view;
+    private ArrayList<Venda> VendasJtableNotaFiscal;
+    
     
     public InternalCadastroVendaController(InternalCadastroVenda view) {
     
@@ -27,6 +31,9 @@ public class InternalCadastroVendaController {
         
         helperInterCadVenda.preencheComboBoxUsuario();
         helperInterCadVenda.preencheComboBoxProduto();
+        
+        this.VendasJtableNotaFiscal = new ArrayList<>();
+        
     }
     
     
@@ -47,11 +54,72 @@ public class InternalCadastroVendaController {
         helperInterCadVenda.setId(helperInterCadVenda.getId() +1);
     }
     
+    
+    public void finalizar() {
+        if(!VendasJtableNotaFiscal.isEmpty()){
+            this.limpar();
+            VendasJtableNotaFiscal.clear();
+            view.exibeMsg("Venda Finalizada, confira os dados em Listagem de Vendas");       
+            view.getjTableNotaFiscal().setModel(setModelTable());
+          //  this.sair();
+        }
+       
+    }
      
+     private DefaultTableModel setModelTable(){
+        
+       DefaultTableModel modelo = new DefaultTableModel();
+       
+       modelo.addColumn("Produto");
+       modelo.addColumn("Data");       
+       modelo.addColumn("Usuario");
+       modelo.addColumn("Qtd");
+       modelo.addColumn("Total");
+       return modelo;
+    }
+     
+    
+     
+    public void addTabelaNota(){
+        
+              
+       DefaultTableModel modelo = setModelTable();
+                        
+        if(VendasJtableNotaFiscal.isEmpty()){
+           modelo.addRow(new String[] {"Sem info", "Sem info"});
+            System.out.println("vazio");
+           return; 
+        }
+                   
+          
+       try{
+            for (int i = 0; i < VendasJtableNotaFiscal.size(); i++) {        
+                  modelo.addRow(new String[] {
+           //   VendasJtableNotaFiscal.get(i).getId().toString(),
+              VendasJtableNotaFiscal.get(i).getProduto().getNome(),
+              VendasJtableNotaFiscal.get(i).getData_venda(),            
+              VendasJtableNotaFiscal.get(i).getUsuario().getNome(),       
+              VendasJtableNotaFiscal.get(i).getQtd().toString(),
+              VendasJtableNotaFiscal.get(i).getValor_total().toString(),
+                });                   
+        }      
+            
+        view.getjTableNotaFiscal().setModel(modelo);
+       } 
+       catch(Exception e){
+           view.exibeMsg("Ops ocorreu um erro");
+       }
+      
+       
+         
+    }
+     
+    
+    
      public void cadastrarNoSistema() {
          
       Venda venda = helperInterCadVenda.obterModeloVenda();
-      
+                 
       if(venda != null){ 
       
        ProdutoDAO prodDao = new ProdutoDAO();
@@ -75,18 +143,23 @@ public class InternalCadastroVendaController {
             if(qtd == 0){
                 helperInterCadVenda.preencheComboBoxProduto();
             }
+            
+            VendasJtableNotaFiscal.add(venda);     
+            this.addTabelaNota();
+            
+            
              view.exibeMsg("Venda de " + venda.getProduto().getNome() + " Feita com sucesso com sucesso!");
              vendaDao.insert(venda);
              this.incrementaId();       
              }
              else{
-               view.exibeMsg("Produto a Vender nao existente, confira ou cadastre-os");
+               view.exibeMsg("Produto a Vender nao existente, confira ou cadastre-os");                           
              }
           
         
       }
       else{
-          view.exibeMsg("Porfavor preenhca todos os campos corretamente");
+          view.exibeMsg("Porfavor preencha todos os campos corretamente");
       }
        
      }

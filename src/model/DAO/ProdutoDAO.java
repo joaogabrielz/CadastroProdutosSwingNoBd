@@ -93,14 +93,20 @@ public class ProdutoDAO {
         
 //        for(Produto p : Banco.produto){
 
-            if(qtdAVender == produto.getQtd()){
-               delete(produto);
-               return 0;
-            }
-            else if(qtdAVender < produto.getQtd()){
-               produto.setQtd(produto.getQtd() - qtdAVender);
-               return 1;
-            }
+//            if(qtdAVender == produto.getQtd()){
+//               delete(produto);
+//               return 0;
+//            }
+//            if(qtdAVender < produto.getQtd()){
+//               produto.setQtd(produto.getQtd() - qtdAVender);
+//               return 1;
+//            }
+               if(qtdAVender <= produto.getQtd()){
+                 produto.setQtd(produto.getQtd() - qtdAVender);
+                 return 1;
+               }
+               
+             
            
 //            if(produto.getQtd() <= 0 && produto.getQtd() != null){
 //                delete(produto);

@@ -46,6 +46,11 @@ public class InternalCadastroVendaHelper {
 
        Integer quantidadeAVender =  (Integer) view.getjSpinnerQuantidade().getValue();
         
+       if(quantidadeAVender <= 0){
+         view.exibeMsg("Erro: Qtd a Vender Menor ou Igual a Zero"); 
+         return null; 
+       }
+       
        if(nomeUsuarioVenda.toString() != "Selecione um Usuario"  && produtoVenda.toString() != "Selecione um Usuario" 
                && dataVenda != ""  
                && quantidadeAVender > 0)
@@ -69,7 +74,8 @@ public class InternalCadastroVendaHelper {
             
         }
         else{
-          view.exibeMsg("Quantidade a vender nao pode ser maior que quantiade de produtos");  
+          view.exibeMsg("Quantidade a vender nao pode ser maior que quantidade de produtos, qtd de [ " +
+                  produtoExitente.getNome() + " ] : " + produtoExitente.getQtd());  
         }
 //        else if(quantidadeAVender > produtoExitente.getQtd()){          
 //            
