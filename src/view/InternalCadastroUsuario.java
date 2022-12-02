@@ -10,10 +10,6 @@ import javax.swing.JPanel;
 import javax.swing.JSeparator;
 import javax.swing.JTextField;
 
-/**
- *
- * @author kaliez
- */
 public class InternalCadastroUsuario extends javax.swing.JInternalFrame {
 
     /**

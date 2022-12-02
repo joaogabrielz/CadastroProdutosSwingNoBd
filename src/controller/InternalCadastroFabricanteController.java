@@ -9,20 +9,17 @@ import model.DAO.FabricanteDAO;
 import model.Fabricante;
 import view.InternalCadastroFabricante;
 
-/**
- *
- * @author kaliez
- */
+
 public class InternalCadastroFabricanteController {
     
     
-    private InternalCadastroFabricanteHelper helperInterCadFabric; //
+    private InternalCadastroFabricanteHelper helperInterCadFabric;
     private InternalCadastroFabricante view;
     
     public InternalCadastroFabricanteController(InternalCadastroFabricante view) {
     
         this.view = view;
-        this.helperInterCadFabric = new InternalCadastroFabricanteHelper(view); // 
+        this.helperInterCadFabric = new InternalCadastroFabricanteHelper(view);
     }
     
     
@@ -46,7 +43,6 @@ public class InternalCadastroFabricanteController {
       
        
     //  Pesquisa Produto no Banco, usando DAO
-    
       FabricanteDAO produtoDAO = new FabricanteDAO();
       Fabricante fabricanteExistente = produtoDAO.selectPorNomeEFabricante(produto);
              

@@ -9,12 +9,8 @@ import model.DAO.UsuarioDAO;
 import model.Usuario;
 import view.CadastroUsuario;
 import view.Login;
-import view.MenuPrincipal;
 
-/**
- *
- * @author kaliez
- */
+
 public class CadastroController {
     
     private final CadastroUsuario view;

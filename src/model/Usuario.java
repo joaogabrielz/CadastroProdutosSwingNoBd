@@ -14,12 +14,6 @@ public class Usuario extends Endereco{
     private Integer idade;
     private String cpf;
 
-    
-    //Sobrecarga de construtores
-//    public Usuario(){
-//        
-//    }
-
     public Usuario(Integer id, String login, String senha) {
         this.id = id;
         this.login = login;

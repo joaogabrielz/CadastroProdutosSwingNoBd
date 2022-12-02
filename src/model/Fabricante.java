@@ -4,21 +4,17 @@
  */
 package model;
 
-/**
- *
- * @author kaliez
- */
+
 public class Fabricante extends Endereco{
     
     private Integer id;
     private String nome;
- //   private String endereco;
     private String cnpj;
 
     
     
     public Fabricante(Integer id, String nome, String cnpj,
-        
+     
       //Herda de endereco  
      Integer id_End, String rua_End, String num_End, 
      String cep_End, String cid_End, String est_End, String bairro_End) {
@@ -33,7 +29,6 @@ public class Fabricante extends Endereco{
     public Fabricante(Integer id, String nome, String cnpj) {
         this.id = id;
         this.nome = nome;
-     //   this.endereco = endereco;
         this.cnpj = cnpj;
     }
 

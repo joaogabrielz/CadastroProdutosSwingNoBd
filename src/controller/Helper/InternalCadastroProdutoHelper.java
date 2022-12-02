@@ -13,14 +13,11 @@ import model.Fabricante;
 import model.Produto;
 import view.InternalCadastroProduto;
 
-/**
- *
- * @author kaliez
- */
+
 public class InternalCadastroProdutoHelper {
     
     private final InternalCadastroProduto view;
-    private Integer id = 2; // se n tiver itens no banco seta como 1
+    private Integer id = 2; 
 
     public InternalCadastroProdutoHelper(InternalCadastroProduto view) {
         this.view = view;
@@ -28,14 +25,14 @@ public class InternalCadastroProdutoHelper {
     
      public Produto obterModeloCadastro(){
 
-       //Produto
     try {
-        String nomeProd =  view.getjTextNomeProd().getText();
+       String nomeProd =  view.getjTextNomeProd().getText();
        
        Object fabricanteNome =  view.getjComboBoxNomeFab().getSelectedItem();  
        Fabricante fabricanteObject = this.pegaCnpjDoFabricanteSelecionado(fabricanteNome.toString());
        
        String fabricanteCnpj = "";
+       
        if(fabricanteObject != null){
         fabricanteCnpj = fabricanteObject.getCnpj();
         view.getjTextFabricanteCnpj().setText(fabricanteCnpj);
@@ -50,9 +47,9 @@ public class InternalCadastroProdutoHelper {
        if(nomeProd != ""  && fabricanteCnpj != "" && preco_custo != ""  
                && preco_venda != ""  && qtd > 0)
        {
-            ProdutoDAO produtoDao = new ProdutoDAO();
+        ProdutoDAO produtoDao = new ProdutoDAO();
 
-           Fabricante fabricanteExitente = produtoDao.selectNomeFabricanteECnpj(fabricanteNome.toString(), fabricanteCnpj);
+        Fabricante fabricanteExitente = produtoDao.selectNomeFabricanteECnpj(fabricanteNome.toString(), fabricanteCnpj);
 
            if(fabricanteExitente != null){
 
@@ -69,22 +66,18 @@ public class InternalCadastroProdutoHelper {
        }
            
        }
-       
-       
-       
-       
-       
-        } catch (Exception e) {
-            System.out.println(e);
-            view.exibeMsg("Ops algo deu errado, porfavor verifique os dados!");
-            return null;
-        }
-  return null;
+        
+    } catch (Exception e) {
+        System.out.println(e);
+        view.exibeMsg("Ops algo deu errado, porfavor verifique os dados!");
+        return null;
+    }
+    
+    return null;
     }
      
     public void preencheComboBox() {
       
-    // limpa
     DefaultComboBoxModel comboModel = (DefaultComboBoxModel) view.getjComboBoxNomeFab().getModel();
     comboModel.removeAllElements();
     comboModel.addElement("Selecione um Fabricante");
@@ -100,9 +93,7 @@ public class InternalCadastroProdutoHelper {
         String fabName = fabricantesBd.get(i).getNome();
         comboModel.addElement(fabName);
     }    
-    
-   
-    }
+   }
     
     
     
@@ -116,29 +107,9 @@ public class InternalCadastroProdutoHelper {
       }
      return null;
     }
+       
     
-     
-    
-    public void setarModeloCadastro(Produto modelo){
-      //  Integer idUs = modelo.getId();   
-      //  String nomeProd = modelo.getNome();
-     //   String fabricante = modelo.getFabricante();
-//        String preco_custo = modelo.getPreco_custo();
-//        String preco_venda = modelo.getPreco_venda();
-      //  Integer qtd = modelo.getQtd();
-              
-     //   view.getjTextNomeProd().setText(nomeProd);
-     //   view.getjTextFabricante().setText(fabricante);
-//        view.getjTextPrecoCusto().setText(preco_custo);
-//        view.getjTextPrecoVenda().setText(preco_venda);
-//        view.getjSpinnerQuantidade().setValue(qtd);
-        
-        
-        
-    }
-    
-    
-     public void limparTelaCadastro(){
+    public void limparTelaCadastro(){
         
         view.getjTextNomeProd().setText("");
         view.getjComboBoxNomeFab().setSelectedIndex(0);

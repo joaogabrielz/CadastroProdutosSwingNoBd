@@ -4,10 +4,7 @@
  */
 package model;
 
-/**
- *
- * @author kaliez
- */
+
 public class Produto {
     
     private Integer id;
@@ -21,8 +18,7 @@ public class Produto {
 //    public Produto(){
 //        
 //    }
-    
-    
+     
     public Produto(Integer id, String nome, Fabricante fabricante, Double preco_custo, Double preco_venda, Integer qtd) {
         this.id = id;
         this.nome = nome;

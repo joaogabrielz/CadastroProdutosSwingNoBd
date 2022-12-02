@@ -9,10 +9,6 @@ import view.CadastroUsuario;
 import view.MenuPrincipal;
 
 
-/**
- *
- * @author kaliez
- */
 public class CadastroHelper {
     
     private final CadastroUsuario view;
@@ -44,7 +40,6 @@ public class CadastroHelper {
        String estado =  view.getjTextEstado3().getText();
        
        Integer idadeN = Integer.parseInt(idade);
-      // Integer cpfN = Integer.parseInt(cpf);
        
       if(nome != "" && sobrenome != ""  && idade != "" && cpf != "" && login != ""
               && senha != ""
@@ -60,22 +55,20 @@ public class CadastroHelper {
        
        }
       else{
-          view.exibeMsg("Campos nao podem ficar vazios!"); 
+         view.exibeMsg("Campos nao podem ficar vazios!"); 
          return null; 
-      }
-      
-      
+        }
         } 
     
-        catch (Exception e) {
-            System.out.println(e); 
-             view.exibeMsg("Ops algo deu errado, porfavor verifique os dados!");
-            return null;  
+    catch (Exception e) {
+        System.out.println(e); 
+         view.exibeMsg("Ops algo deu errado, porfavor verifique os dados!");
+        return null;  
       }
     }
     
     public void setarModeloCadastro(Usuario modelo){
-      //  Integer idUs = modelo.getId();
+
         String nomeCompleto = modelo.getNome();
         Integer idade = modelo.getIdade();
         String cpf = modelo.getCpf();
@@ -89,7 +82,6 @@ public class CadastroHelper {
         String estado = modelo.getEstado();
         
         view.getjTextNome3().setText(nomeCompleto);
-        //sobrenome
         view.getjTextCpf4().setText(cpf.toString());
         view.getjTextLogin3().setText(login);
         view.getjTextIdade3().setText(idade.toString());

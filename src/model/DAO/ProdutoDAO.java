@@ -8,10 +8,7 @@ import java.util.ArrayList;
 import model.Fabricante;
 import model.Produto;
 
-/**
- *
- * @author kaliez
- */
+
 public class ProdutoDAO {
     
        /**
@@ -25,7 +22,7 @@ public class ProdutoDAO {
     /**
      * Atualiza um Objeto no banco de dados
      * @param produto
-     * @return 
+     * @return boolean
      */
     public boolean update(Produto produto){
         
@@ -40,9 +37,9 @@ public class ProdutoDAO {
     }
     
     /**
-     * Deleta um objeto do banco de dados pelo id do usuario passado
+     * Deleta um objeto do banco de dados do usuario passado
      * @param produto
-     * @return 
+     * @return boolean
      */
     public boolean delete(Produto produto){
         for (Produto produtoLista : Banco.produto) {
@@ -85,35 +82,14 @@ public class ProdutoDAO {
        return null;
     }
     
-    
-    
-    //diminuiQtd
-    
+ 
     public int diminuiQtdOuExclui(Produto produto, Integer qtdAVender){
         
-//        for(Produto p : Banco.produto){
-
-//            if(qtdAVender == produto.getQtd()){
-//               delete(produto);
-//               return 0;
-//            }
-//            if(qtdAVender < produto.getQtd()){
-//               produto.setQtd(produto.getQtd() - qtdAVender);
-//               return 1;
-//            }
-               if(qtdAVender <= produto.getQtd()){
-                 produto.setQtd(produto.getQtd() - qtdAVender);
-                 return 1;
-               }
-               
-             
-           
-//            if(produto.getQtd() <= 0 && produto.getQtd() != null){
-//                delete(produto);
-//            }   
-      //  }
-      
-      return 0;
+    if(qtdAVender <= produto.getQtd()){
+      produto.setQtd(produto.getQtd() - qtdAVender);
+      return 1;
+    }   
+    return 0;
     }
     
     
@@ -153,15 +129,10 @@ public class ProdutoDAO {
         i++;
      }
         
-        return false;
+    return false;
     }
     
     
-    /**
-     * Retorna um Objeto do tipo usuario se a funcao encontrar o usuario passado como parâmetro no banco, para considerar sao usado nome e senha
-     * @param produto
-     * @return Usuario encontrado no banco de dados
-     */
     public Produto selectPorNomeEFabricante(Produto produto){
         for (Produto produtoLista : Banco.produto) {
             if(nomeEFabricanteSaoIguais(produtoLista,produto)){
@@ -172,7 +143,7 @@ public class ProdutoDAO {
     }
 
     /**
-     * Recebe dois objetos e verifica se são iguais verificando o nome e senha
+     * Recebe dois objetos e verifica se são iguais verificando o nome e fabricante
      * @param produto
      * @param produtoAPesquiasar
      * @return verdadeiro caso sejam iguais e falso caso nao forem iguais

@@ -11,10 +11,7 @@ import javax.swing.JTable;
 import javax.swing.ListSelectionModel;
 import javax.swing.table.DefaultTableModel;
 
-/**
- *
- * @author kaliez
- */
+
 public class InternalListagemFabricantes extends javax.swing.JInternalFrame {
 
     private final InternalListagemFabricantesController controller;

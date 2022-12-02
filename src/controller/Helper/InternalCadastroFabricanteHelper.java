@@ -7,10 +7,7 @@ package controller.Helper;
 import model.Fabricante;
 import view.InternalCadastroFabricante;
 
-/**
- *
- * @author kaliez
- */
+
 public class InternalCadastroFabricanteHelper {
     
     private final InternalCadastroFabricante view;
@@ -57,8 +54,7 @@ public class InternalCadastroFabricanteHelper {
     }
     
     public void setarModeloCadastro(Fabricante modelo){
-      //  Integer idUs = modelo.getId();
-      
+     
         String nomeFab = modelo.getNome();
         String CnpjFab = modelo.getCnpj();
         String RuaFab = modelo.getRua();

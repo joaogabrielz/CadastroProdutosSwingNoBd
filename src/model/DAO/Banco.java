@@ -30,12 +30,10 @@ public class Banco {
         venda = new ArrayList<>();
         
         
-        //criando elemt
+        //criando elemt PARA TESTES: 
+        
         Usuario usuarioAdm = new Usuario(0, "root", "root"); // pos 0 
      
-        
-        
-        // PARA TESTES: 
         
         Usuario usuario1 = new Usuario(1, "joao", "jaum", "jao123", 23, "33344", 
                 0, "caixa", "263", "790042163", "campo grande", "MS", "piraci");
@@ -56,9 +54,7 @@ public class Banco {
         fabricante.add(fab1);
         produto.add(prod1);
         venda.add(ven1);
-        
-        //endereco
-        
+       
     }
     
 }

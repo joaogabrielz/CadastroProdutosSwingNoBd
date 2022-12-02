@@ -11,10 +11,7 @@ import javax.swing.JTable;
 import javax.swing.ListSelectionModel;
 import javax.swing.table.DefaultTableModel;
 
-/**
- *
- * @author ra186592
- */
+
 public class InternalListagemUsuarios extends javax.swing.JInternalFrame {
 
    

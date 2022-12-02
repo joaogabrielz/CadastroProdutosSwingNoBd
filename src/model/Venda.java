@@ -4,13 +4,6 @@
  */
 package model;
 
-import java.util.ArrayList;
-import model.DAO.Banco;
-
-/**
- *
- * @author kaliez
- */
 public class Venda {
     
     private Produto produto;
@@ -20,13 +13,7 @@ public class Venda {
     private Usuario usuario;
     private Integer qtd;
 
-    
-    
-//    public Venda(){
-//        
-//    }
-    
-    
+     
     public Venda(Produto produto, Double valor_total, String data_venda, Integer id, Usuario usuario, Integer qtd) {
         
         this.produto = produto; 

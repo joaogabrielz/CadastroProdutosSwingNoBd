@@ -11,14 +11,9 @@ import model.DAO.ProdutoDAO;
 import model.Produto;
 import view.InternalListagemProdutos;
 
-/**
- *
- * @author kaliez
- */
+
 public class InternalListagemProdutosController {
-    
-    
-     
+        
     private InternalListagemProdutos view;
     
     public InternalListagemProdutosController(InternalListagemProdutos view) {
@@ -82,15 +77,10 @@ public class InternalListagemProdutosController {
        if(ProdutoEncontrado != null){
          produtoDao.delete(ProdutoEncontrado);
        }
-//       else{
-//           
-//       }
-   
    }
     
     public void editar(String oldValue, String newValue, String columnName, String idRow){
           
-   // System.out.println(idRow);
      ProdutoDAO prodDao = new ProdutoDAO();
      boolean findAndEdited = prodDao.updatePorId(Integer.parseInt(idRow), columnName, newValue);
      if(findAndEdited){

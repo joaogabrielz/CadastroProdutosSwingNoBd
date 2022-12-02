@@ -8,10 +8,7 @@ import controller.CadastroController;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
-/**
- *
- * @author kaliez
- */
+
 public class CadastroUsuario extends javax.swing.JFrame {
 
     /**

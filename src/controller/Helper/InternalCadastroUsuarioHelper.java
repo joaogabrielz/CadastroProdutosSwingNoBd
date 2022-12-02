@@ -7,12 +7,8 @@ package controller.Helper;
 
 import model.Usuario;
 import view.InternalCadastroUsuario;
-import view.MenuPrincipal;
 
-/**
- *
- * @author kaliez
- */
+
 public class InternalCadastroUsuarioHelper {
     
     
@@ -27,7 +23,7 @@ public class InternalCadastroUsuarioHelper {
    public Usuario obterModeloCadastro(){
 
        try {
-       //usuario
+
        String nome =  view.getjTextNome3().getText();
        String sobrenome =  view.getjTextSobrenome3().getText();
        
@@ -45,8 +41,6 @@ public class InternalCadastroUsuarioHelper {
        String estado =  view.getjTextEstado3().getText();
        
        Integer idadeN = Integer.parseInt(idade);
-//       Integer cpfN = Integer.parseInt(cpf);
-
 
         if(nome != "" && sobrenome != ""   && idade != ""  && cpf != ""  && login != "" 
               && senha != "" 
@@ -55,29 +49,28 @@ public class InternalCadastroUsuarioHelper {
        {
            
         String nomeCompleto = (nome + " " + sobrenome);
-         Usuario modelo = new Usuario(this.id, nomeCompleto, login, senha, idadeN, cpf,
-               this.id, rua, numeroRua, cep, cidade, estado, bairro);
+        
+        Usuario modelo = new Usuario(this.id, nomeCompleto, login, senha, idadeN, cpf,
+                                this.id, rua, numeroRua, cep, cidade, estado, bairro);
          
-       return modelo;
+        return modelo;
        }
         else{
          view.exibeMsg("Campos nao podem ficar vazios!"); 
          return null;  
-            
+
         }
-       
-     
-       }  
-        catch (Exception e) {
-            System.out.println(e); 
-            view.exibeMsg("Ops algo deu errado, porfavor verifique os dados!");
-            return null;  
-      }
+    }  
+     catch (Exception e) {
+         System.out.println(e); 
+         view.exibeMsg("Ops algo deu errado, porfavor verifique os dados!");
+         return null;  
+    }
     }
    
     
     public void setarModeloCadastro(Usuario modelo){
-      //  Integer idUs = modelo.getId();
+        
         String nomeCompleto = modelo.getNome();
         Integer idade = modelo.getIdade();
         String cpf = modelo.getCpf();
@@ -91,7 +84,6 @@ public class InternalCadastroUsuarioHelper {
         String estado = modelo.getEstado();
         
         view.getjTextNome3().setText(nomeCompleto);
-        //sobrenome
         view.getjTextCpf4().setText(cpf.toString());
         view.getjTextLogin3().setText(login);
         view.getjTextIdade3().setText(idade.toString());

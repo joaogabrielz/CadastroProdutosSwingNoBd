@@ -6,8 +6,7 @@ package model;
 
 
  public class Endereco{
-     //abstract
-    
+
     protected Integer id;
     protected String rua;
     protected String numero;
@@ -17,12 +16,10 @@ package model;
     protected String bairro;
 
     
-    //Sobrecarga de construtores
     public Endereco(){
         
     }
-    
-    
+     
     public Endereco(String cep){
         this.cep = cep;
     }  

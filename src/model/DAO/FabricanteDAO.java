@@ -7,10 +7,7 @@ package model.DAO;
 import java.util.ArrayList;
 import model.Fabricante;
 
-/**
- *
- * @author kaliez
- */
+
 public class FabricanteDAO {
     
         /**
@@ -24,7 +21,7 @@ public class FabricanteDAO {
     /**
      * Atualiza um Objeto no banco de dados
      * @param fabricante
-     * @return 
+     * @return boolean
      */
     public boolean update(Fabricante fabricante){
         
@@ -105,7 +102,7 @@ public class FabricanteDAO {
     /**
      * Deleta um objeto do banco de dados pelo id do usuario passado
      * @param fabricante
-     * @return 
+     * @return boolean
      */
     public boolean delete(Fabricante fabricante){
         for (Fabricante fabrList : Banco.fabricante) {
@@ -150,9 +147,9 @@ public class FabricanteDAO {
     }
 
     /**
-     * Recebe dois objetos e verifica se são iguais verificando o nome e senha
-     * @param produto
-     * @param produtoAPesquiasar
+     * Recebe dois objetos e verifica se são iguais verificando o nome e cnpj
+     * @param fabricante
+     * @param fabricanteAPesquisar
      * @return verdadeiro caso sejam iguais e falso caso nao forem iguais
      */
     private boolean nomeECnpjSaoIguais(Fabricante fabricante, Fabricante fabricantePesquisar) {

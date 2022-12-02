@@ -10,19 +10,15 @@ import model.Usuario;
 import view.InternalCadastroUsuario;
 
 
-/**
- *
- * @author kaliez
- */
 public class InternalCadastroController {
     
-    private InternalCadastroUsuarioHelper helperInterCadastro; //
+    private InternalCadastroUsuarioHelper helperInterCadastro;
     private InternalCadastroUsuario view;
     
     public InternalCadastroController(InternalCadastroUsuario view) {
     
         this.view = view;
-        this.helperInterCadastro = new InternalCadastroUsuarioHelper(view); // 
+        this.helperInterCadastro = new InternalCadastroUsuarioHelper(view);
     }
     
   

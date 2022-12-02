@@ -7,10 +7,6 @@ package model.DAO;
 import java.util.ArrayList;
 import model.Usuario;
 
-/**
- *
- * @author kaliez
- */
 public class UsuarioDAO {
     
       /**
@@ -24,7 +20,7 @@ public class UsuarioDAO {
     /**
      * Atualiza um Objeto no banco de dados
      * @param usuario
-     * @return 
+     * @return boolean
      */
     public boolean update(Usuario usuario){
         
@@ -112,9 +108,9 @@ public class UsuarioDAO {
      
     
     /**
-     * Deleta um objeto do banco de dados pelo id do usuario passado
+     * Deleta um objeto do banco de dados usuario passado
      * @param usuario
-     * @return 
+     * @return boolean
      */
     public boolean delete(Usuario usuario){
         for (Usuario usuarioLista : Banco.usuario) {
@@ -134,11 +130,7 @@ public class UsuarioDAO {
         return Banco.usuario;
     }
     
-    /**
-     * Retorna um Objeto do tipo usuario se a funcao encontrar o usuario passado como parâmetro no banco, para considerar sao usado nome e senha
-     * @param usuario
-     * @return Usuario encontrado no banco de dados
-     */
+
     public Usuario selectPorNomeESenha(Usuario usuario){
         for (Usuario usuarioLista : Banco.usuario) {
             if(loginESenhaSaoIguais(usuarioLista,usuario)){

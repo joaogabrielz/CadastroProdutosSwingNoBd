@@ -11,10 +11,6 @@ import model.DAO.UsuarioDAO;
 import model.Usuario;
 import view.InternalListagemUsuarios;
 
-/**
- *
- * @author kaliez
- */
 public class InternalListagemUsuariosController {
     
    
@@ -61,10 +57,6 @@ public class InternalListagemUsuariosController {
         
        for (int i = 1; i < usuariosBanco.size(); i++) {
            String idadeStr = String.format("%d", usuariosBanco.get(i).getIdade());
-        //   String CpfStr = String.format("%d", usuariosBanco.get(i).getCpf());
-//           Integer.toString(usuariosBanco.get(i).getIdade());
-           
-          //  modelo.addRow(new String[] {String.valueOf(i), });
               modelo.addRow(new String[] {
               usuariosBanco.get(i).getId().toString(),
               usuariosBanco.get(i).getNome(),
@@ -88,7 +80,6 @@ public class InternalListagemUsuariosController {
 
     public void editar(String oldValue, String newValue, String columnName, String idRow){
           
-   // System.out.println(idRow);
      UsuarioDAO userDao = new UsuarioDAO();
      boolean findAndEdited = userDao.updatePorId(Integer.parseInt(idRow), columnName, newValue);
      if(findAndEdited){
@@ -111,11 +102,7 @@ public class InternalListagemUsuariosController {
        Usuario UsuarioEncontrado = usuarioDao.selectPorId(IdToDelete);
        if(UsuarioEncontrado != null){
          usuarioDao.delete(UsuarioEncontrado);
-       }
-//       else{
-//           
-//       }
-   
+       } 
    }
     
     

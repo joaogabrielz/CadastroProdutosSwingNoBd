@@ -10,10 +10,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JSpinner;
 import javax.swing.JTextField;
 
-/**
- *
- * @author kaliez
- */
+
 public class InternalCadastroProduto extends javax.swing.JInternalFrame {
 
     

@@ -8,10 +8,7 @@ import controller.InternalCadastroFabricanteController;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
-/**
- *
- * @author kaliez
- */
+
 public class InternalCadastroFabricante extends javax.swing.JInternalFrame {
 
    

@@ -15,10 +15,6 @@ import view.InternalListagemVendas;
 import view.Login;
 import view.MenuPrincipal;
 
-/**
- *
- * @author kaliez
- */
 public class MenuPrincipalController {
 
     private final MenuPrincipal view;
@@ -46,9 +42,9 @@ public class MenuPrincipalController {
     public void showCadastroProduto(){
         InternalCadastroProduto cadProduto = new InternalCadastroProduto();
         
-        cadProduto.setClosable(true);//Se o frame vai poder ser fechado pelo botão fechar 
-        cadProduto.setIconifiable(true);//Se o frame vai poder ser minimizado.
-        cadProduto.setResizable(true);//Pemite editar o tamanho.
+        cadProduto.setClosable(true);
+        cadProduto.setIconifiable(true);
+        cadProduto.setResizable(true);
         
         this.view.getjDesktopPane1().add(cadProduto);           
         cadProduto.setVisible(true);
@@ -57,9 +53,9 @@ public class MenuPrincipalController {
     public void showCadastroFabricante(){
         InternalCadastroFabricante cadFabricante = new InternalCadastroFabricante();
         
-        cadFabricante.setClosable(true);//Se o frame vai poder ser fechado pelo botão fechar 
-        cadFabricante.setIconifiable(true);//Se o frame vai poder ser minimizado.
-        cadFabricante.setResizable(true);//Pemite editar o tamanho.
+        cadFabricante.setClosable(true); 
+        cadFabricante.setIconifiable(true);
+        cadFabricante.setResizable(true);
         
         this.view.getjDesktopPane1().add(cadFabricante);           
         cadFabricante.setVisible(true);
@@ -68,9 +64,9 @@ public class MenuPrincipalController {
     public void showCadastroVenda(){
         InternalCadastroVenda cadVenda = new InternalCadastroVenda();
         
-        cadVenda.setClosable(true);//Se o frame vai poder ser fechado pelo botão fechar 
-        cadVenda.setIconifiable(true);//Se o frame vai poder ser minimizado.
-        cadVenda.setResizable(true);//Pemite editar o tamanho.
+        cadVenda.setClosable(true);
+        cadVenda.setIconifiable(true);
+        cadVenda.setResizable(true);
         
         this.view.getjDesktopPane1().add(cadVenda);           
         cadVenda.setVisible(true);
@@ -90,9 +86,9 @@ public class MenuPrincipalController {
          
         InternalListagemUsuarios listagemUsuario = new InternalListagemUsuarios();
          
-        listagemUsuario.setClosable(true);//Se o frame vai poder ser fechado pelo botão fechar 
-        listagemUsuario.setIconifiable(true);//Se o frame vai poder ser minimizado.
-        listagemUsuario.setResizable(true);//Pemite editar o tamanho.
+        listagemUsuario.setClosable(true); 
+        listagemUsuario.setIconifiable(true);
+        listagemUsuario.setResizable(true);
         
         this.view.getjDesktopPane1().add(listagemUsuario);           
         listagemUsuario.setVisible(true);
@@ -102,9 +98,9 @@ public class MenuPrincipalController {
          
         InternalListagemProdutos listagemProdutos = new InternalListagemProdutos();
               
-        listagemProdutos.setClosable(true);//Se o frame vai poder ser fechado pelo botão fechar 
-        listagemProdutos.setIconifiable(true);//Se o frame vai poder ser minimizado.
-        listagemProdutos.setResizable(true);//Pemite editar o tamanho.
+        listagemProdutos.setClosable(true); 
+        listagemProdutos.setIconifiable(true);
+        listagemProdutos.setResizable(true);
         
         this.view.getjDesktopPane1().add(listagemProdutos);           
         listagemProdutos.setVisible(true);
@@ -114,9 +110,9 @@ public class MenuPrincipalController {
         
         InternalListagemFabricantes listagemFabricantes = new InternalListagemFabricantes();
               
-        listagemFabricantes.setClosable(true);//Se o frame vai poder ser fechado pelo botão fechar 
-        listagemFabricantes.setIconifiable(true);//Se o frame vai poder ser minimizado.
-        listagemFabricantes.setResizable(true);//Pemite editar o tamanho.
+        listagemFabricantes.setClosable(true);
+        listagemFabricantes.setIconifiable(true);
+        listagemFabricantes.setResizable(true);
         
         this.view.getjDesktopPane1().add(listagemFabricantes);           
         listagemFabricantes.setVisible(true);
@@ -126,9 +122,9 @@ public class MenuPrincipalController {
         
         InternalListagemVendas listagemVendas = new InternalListagemVendas();
               
-        listagemVendas.setClosable(true);//Se o frame vai poder ser fechado pelo botão fechar 
-        listagemVendas.setIconifiable(true);//Se o frame vai poder ser minimizado.
-        listagemVendas.setResizable(true);//Pemite editar o tamanho.
+        listagemVendas.setClosable(true);
+        listagemVendas.setIconifiable(true);
+        listagemVendas.setResizable(true);
         
         this.view.getjDesktopPane1().add(listagemVendas);           
         listagemVendas.setVisible(true);

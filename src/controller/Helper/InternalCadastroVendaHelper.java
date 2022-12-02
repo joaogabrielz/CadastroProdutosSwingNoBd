@@ -15,10 +15,7 @@ import model.Usuario;
 import model.Venda;
 import view.InternalCadastroVenda;
 
-/**
- *
- * @author kaliez
- */
+
 public class InternalCadastroVendaHelper {
     
     private final InternalCadastroVenda view;
@@ -32,13 +29,6 @@ public class InternalCadastroVendaHelper {
     public Venda obterModeloVenda(){
 
     try {
-              //venda
-      //  String nomeUsuarioVenda = view.getjTextUsuarioVenda().getText();
-      
-      //  String valorTotalVenda = view.getjTextValorTotal().getText();
-     //   String produtoVenda = view.getjTextProduto().getText();
-     
-     
        Object nomeUsuarioVenda =  view.getjComboBoxUsuarioName().getSelectedItem();
        Object produtoVenda =  view.getjComboBoxProdutoName().getSelectedItem();
        
@@ -56,7 +46,7 @@ public class InternalCadastroVendaHelper {
                && quantidadeAVender > 0)
        {
            
-        VendaDAO vendaDao = new VendaDAO();
+       VendaDAO vendaDao = new VendaDAO();
        
        Produto produtoExitente = vendaDao.selectPorNomeProduto(produtoVenda.toString());
        Usuario usuarioExistente = vendaDao.selectPorNomeUsuario(nomeUsuarioVenda.toString());
@@ -66,42 +56,29 @@ public class InternalCadastroVendaHelper {
  
         if(quantidadeAVender <= produtoExitente.getQtd()){
 
-        Double valorProdutoVenda = produtoExitente.getPreco_venda() * quantidadeAVender;
-                
-        Venda modelo = new Venda(produtoExitente, valorProdutoVenda, dataVenda, id, usuarioExistente, quantidadeAVender);
-                      
+            Double valorProdutoVenda = produtoExitente.getPreco_venda() * quantidadeAVender;
+
+            Venda modelo = new Venda(produtoExitente, valorProdutoVenda, dataVenda, id, usuarioExistente, quantidadeAVender);
+
         return modelo;
             
         }
         else{
           view.exibeMsg("Quantidade a vender nao pode ser maior que quantidade de produtos, qtd de [ " +
                   produtoExitente.getNome() + " ] : " + produtoExitente.getQtd());  
-        }
-//        else if(quantidadeAVender > produtoExitente.getQtd()){          
-//            
-//         Double valorProdutoVenda = produtoExitente.getPreco_venda() * quantidadeAVender;    
-//
-//         Venda modelo = new Venda(produtoExitente, valorProdutoVenda, dataVenda, id, usuarioExistente, quantidadeAVender);
-//                      
-//         return modelo; // quantidadeAVender > modelo.getProduto.getQtd faco if no controllerVenda
-//            
-//        }
-             
+        }     
        }
            
-       }
+      }
        else{
          view.exibeMsg("Campos nao podem ficar vazios!"); 
          return null;    
        }
-       
-       
-       
-        }        
-       catch (Exception e) {
-            System.out.println(e); 
-            view.exibeMsg("Ops algo deu errado, porfavor verifique os dados!");
-            return null;  
+   }        
+    catch (Exception e) {
+         System.out.println(e); 
+         view.exibeMsg("Ops algo deu errado, porfavor verifique os dados!");
+         return null;  
       }
        
       return null;   
@@ -110,24 +87,20 @@ public class InternalCadastroVendaHelper {
     
      public void limparTelaCadastro(){
         
-     //   view.getjTextUsuarioVenda().setText("");
-        view.getjComboBoxUsuarioName().setSelectedIndex(0);
-        view.getjTextDataVenda().setText("");
-      //  view.getjTextValorTotal().setText("");
-     //   view.getjTextProduto().setText("");
+     view.getjComboBoxUsuarioName().setSelectedIndex(0);
+     view.getjTextDataVenda().setText("");
      view.getjComboBoxProdutoName().setSelectedIndex(0);
-        view.getjSpinnerQuantidade().setValue(0);
+     view.getjSpinnerQuantidade().setValue(0);
+     view.getjLabelTotalVenda().setText("0.0");
         
     }  
      
     public void preencheComboBoxUsuario() {
       
-    // limpa
     DefaultComboBoxModel comboModel = (DefaultComboBoxModel) view.getjComboBoxUsuarioName().getModel();
     comboModel.removeAllElements();
     comboModel.addElement("Selecione um Usuario");
     
-    //fabricantes array pega do banco
     List<Usuario> usuariosBd = new ArrayList();
         
     UsuarioDAO userDao = new UsuarioDAO();
@@ -143,7 +116,6 @@ public class InternalCadastroVendaHelper {
       
     public void preencheComboBoxProduto() {
       
-    // limpa
     DefaultComboBoxModel comboModel = (DefaultComboBoxModel) view.getjComboBoxProdutoName().getModel();
     comboModel.removeAllElements();
     comboModel.addElement("Selecione um Produto");

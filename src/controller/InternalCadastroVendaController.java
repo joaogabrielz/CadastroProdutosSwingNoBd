@@ -13,13 +13,10 @@ import model.Produto;
 import model.Venda;
 import view.InternalCadastroVenda;
 
-/**
- *
- * @author kaliez
- */
+
 public class InternalCadastroVendaController {
  
-    private InternalCadastroVendaHelper helperInterCadVenda; //
+    private InternalCadastroVendaHelper helperInterCadVenda;
     private InternalCadastroVenda view;
     private ArrayList<Venda> VendasJtableNotaFiscal;
     
@@ -27,11 +24,10 @@ public class InternalCadastroVendaController {
     public InternalCadastroVendaController(InternalCadastroVenda view) {
     
         this.view = view;
-        this.helperInterCadVenda = new InternalCadastroVendaHelper(view); // 
+        this.helperInterCadVenda = new InternalCadastroVendaHelper(view); 
         
         helperInterCadVenda.preencheComboBoxUsuario();
-        helperInterCadVenda.preencheComboBoxProduto();
-        
+        helperInterCadVenda.preencheComboBoxProduto();       
         this.VendasJtableNotaFiscal = new ArrayList<>();
         
     }
@@ -61,7 +57,6 @@ public class InternalCadastroVendaController {
             VendasJtableNotaFiscal.clear();
             view.exibeMsg("Venda Finalizada, confira os dados em Listagem de Vendas");       
             view.getjTableNotaFiscal().setModel(setModelTable());
-          //  this.sair();
         }
        
     }
@@ -105,6 +100,11 @@ public class InternalCadastroVendaController {
         }      
             
         view.getjTableNotaFiscal().setModel(modelo);
+        Double total = 0d;
+           for (int i = 0; i < VendasJtableNotaFiscal.size(); i++) {
+               total += VendasJtableNotaFiscal.get(i).getValor_total();
+           }
+         view.getjLabelTotalVenda().setText(total.toString());
        } 
        catch(Exception e){
            view.exibeMsg("Ops ocorreu um erro");
@@ -135,11 +135,11 @@ public class InternalCadastroVendaController {
          return;
        }
     
-            if(produtoExistente != null && venda.getProduto().getQtd() > 0){
+        if(produtoExistente != null && venda.getProduto().getQtd() > 0){
              VendaDAO vendaDao = new VendaDAO();
 
-
             int qtd = prodDao.diminuiQtdOuExclui(produtoExistente, venda.getQtd());
+            
             if(qtd == 0){
                 helperInterCadVenda.preencheComboBoxProduto();
             }
@@ -148,13 +148,13 @@ public class InternalCadastroVendaController {
             this.addTabelaNota();
             
             
-             view.exibeMsg("Venda de " + venda.getProduto().getNome() + " Feita com sucesso com sucesso!");
-             vendaDao.insert(venda);
-             this.incrementaId();       
-             }
-             else{
-               view.exibeMsg("Produto a Vender nao existente, confira ou cadastre-os");                           
-             }
+            view.exibeMsg("Venda de " + venda.getProduto().getNome() + " Feita com sucesso com sucesso!");
+            vendaDao.insert(venda);
+            this.incrementaId();       
+            }
+        else{
+          view.exibeMsg("Produto a Vender nao existente, confira ou cadastre-os");                           
+        }
           
         
       }

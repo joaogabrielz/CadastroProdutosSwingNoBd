@@ -11,10 +11,7 @@ import model.DAO.VendaDAO;
 import model.Venda;
 import view.InternalListagemVendas;
 
-/**
- *
- * @author kaliez
- */
+
 public class InternalListagemVendasController {
     
      
@@ -62,8 +59,6 @@ public class InternalListagemVendasController {
               vendasBanco.get(i).getValor_total().toString(),
               vendasBanco.get(i).getData_venda(),
               vendasBanco.get(i).getUsuario().getNome(),
-                  
-           
             });
         }       
        
@@ -80,18 +75,13 @@ public class InternalListagemVendasController {
        Venda VendaEncontrada = vendaDao.deletePorId(IdToDelete);
        if(VendaEncontrada != null){
          vendaDao.delete(VendaEncontrada);
-       }
-//       else{
-//           
-//       }
-   
+       }  
    }
    
 
    
    public void editar(String oldValue, String newValue, String columnName, String idRow){
            
-     // System.out.println(idRow);
      VendaDAO vendaDao = new VendaDAO();
      boolean findAndEdited = vendaDao.updatePorId(Integer.parseInt(idRow), newValue);
      if(findAndEdited){

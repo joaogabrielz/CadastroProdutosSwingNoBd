@@ -10,21 +10,17 @@ import model.Fabricante;
 import model.Produto;
 import view.InternalCadastroProduto;
 
-/**
- *
- * @author kaliez
- */
+
 public class InternalCadastroProdutoController {
     
     
-    private InternalCadastroProdutoHelper helperInterCadProd; //
+    private InternalCadastroProdutoHelper helperInterCadProd;
     private InternalCadastroProduto view;
     
     public InternalCadastroProdutoController(InternalCadastroProduto view) {
     
         this.view = view;
-        this.helperInterCadProd = new InternalCadastroProdutoHelper(view); // 
-        
+        this.helperInterCadProd = new InternalCadastroProdutoHelper(view); 
         helperInterCadProd.preencheComboBox();
     }
     
@@ -60,8 +56,7 @@ public class InternalCadastroProdutoController {
          
       if(produto != null){ // produto existe com fabricante exitente
           
-      //  Pesquisa Produto no Banco, usando DAO
-    
+      //  Pesquisa Produto no Banco, usando DAO  
       ProdutoDAO produtoDAO = new ProdutoDAO();
       Produto produtoExistente = produtoDAO.selectPorNomeEFabricante(produto);
              

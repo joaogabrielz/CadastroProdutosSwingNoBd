@@ -11,10 +11,7 @@ import model.Produto;
 import model.Usuario;
 import model.Venda;
 
-/**
- *
- * @author kaliez
- */
+
 public class VendaDAO {
     
        /**
@@ -28,7 +25,7 @@ public class VendaDAO {
     /**
      * Atualiza um Objeto no banco de dados
      * @param venda
-     * @return 
+     * @return boolean
      */
     public boolean update(Venda venda){
         

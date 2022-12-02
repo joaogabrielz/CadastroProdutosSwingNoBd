@@ -16,10 +16,7 @@ import model.DAO.Banco;
 public class Login extends javax.swing.JFrame {
 
     private final LoginController controllerLogin;
-//acessar campo esse controller de toda minha classe 
-
-   
-    
+ 
     public Login() {
         initComponents();
         controllerLogin = new LoginController(this);
@@ -32,7 +29,6 @@ public class Login extends javax.swing.JFrame {
         else{
             System.out.println("Login second");
         }
-
     }
 
     /**
@@ -113,10 +109,8 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextFieldLoginActionPerformed
 
     private void jButtonEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEntrarActionPerformed
-      //Btn Entrar
-        //this.controller.fizLogin();            
-        this.controllerLogin.entrarNoSistema();
-        
+         
+        this.controllerLogin.entrarNoSistema();      
     }//GEN-LAST:event_jButtonEntrarActionPerformed
 
     private void jButtonCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCadastrarActionPerformed

@@ -10,10 +10,6 @@ import javax.swing.JDesktopPane;
 import javax.swing.JMenuBar;
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author rf3232
- */
 public class MenuPrincipal extends javax.swing.JFrame {
 
 
@@ -251,30 +247,23 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
              
         //Listagem Usuario
-        this.controller.navegarListagemUsuario();
-        
-        
+        this.controller.navegarListagemUsuario();           
     }//GEN-LAST:event_jMenuItem4ActionPerformed
 
     private void jMenu3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu3MouseClicked
         // TODO add your handling code here:
         
-
     }//GEN-LAST:event_jMenu3MouseClicked
 
     private void jMenu3MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu3MousePressed
         // TODO add your handling code here:
         int opt = JOptionPane.showConfirmDialog(null, "Tem certeza que deseja sair?");
-//        if(opt == 0){
-          this.controller.logout(opt);  
-//        }      
+        this.controller.logout(opt);      
     }//GEN-LAST:event_jMenu3MousePressed
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
-        // TODO add your handling code here:
-        
-        this.controller.showCadastroProduto();
-        
+        // TODO add your handling code here:        
+        this.controller.showCadastroProduto();   
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed

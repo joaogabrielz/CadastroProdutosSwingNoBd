@@ -10,12 +10,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.ListSelectionModel;
-import javax.swing.table.TableCellEditor;
 
-/**
- *
- * @author kaliez
- */
 public class InternalListagemVendas extends javax.swing.JInternalFrame {
 
     /**
@@ -32,12 +27,7 @@ public class InternalListagemVendas extends javax.swing.JInternalFrame {
         initComponents();
          this.controller = new InternalListagemVendasController(this);
          this.preencherTabela();
-         this.jTable1.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-         
-    //     DefaultTableModel dtm = (DefaultTableModel)jTable1.getModel();
-      //   this.controller.pickModelAoIniciar(dtm); // id
-                       
-                 
+         this.jTable1.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);              
     }
 
     /**
@@ -222,34 +212,7 @@ public class InternalListagemVendas extends javax.swing.JInternalFrame {
     
     private void jTable1PropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_jTable1PropertyChange
         // TODO add your handling code here:   
-//   
-
         this.propertyChange(evt);
-
-//     // System.out.println(evt.getPropertyName());    
-//    DefaultTableModel dtm = (DefaultTableModel)jTable1.getModel();
-//    
-//  if(evt.getPropertyName().equals("tableCellEditor")){
-//      // System.out.println("editando..");    
-//    oldValueSelected = dtm.getValueAt(jTable1.getSelectedRow(), jTable1.getSelectedColumn()).toString();
-//     
-//    System.out.println(oldValueSelected);
-//         
-//    
-////     if (jTable1.getSelectedRow() >= 0){
-////        String newValue = dtm.getValueAt(jTable1.getSelectedRow(), jTable1.getSelectedColumn()).toString();  
-////     }
-////      else {
-////            JOptionPane.showMessageDialog(null, "Favor selecionar uma linha");
-////      }
-//         
-//    }
-//    if(evt.getPropertyName().equals("tableCellEditor")){
-//        String newValue = dtm.getValueAt(jTable1.getSelectedRow(), jTable1.getSelectedColumn()).toString();
-//        System.out.println(newValue);
-//    }
-         
-     
     }//GEN-LAST:event_jTable1PropertyChange
 
     private void jTable1InputMethodTextChanged(java.awt.event.InputMethodEvent evt) {//GEN-FIRST:event_jTable1InputMethodTextChanged

@@ -11,10 +11,7 @@ import model.DAO.FabricanteDAO;
 import model.Fabricante;
 import view.InternalListagemFabricantes;
 
-/**
- *
- * @author kaliez
- */
+
 public class InternalListagemFabricantesController {
     
     private InternalListagemFabricantes view;
@@ -84,16 +81,11 @@ public class InternalListagemFabricantesController {
     
        if(FabricanteEncontrado != null){
          fabricanteDao.delete(FabricanteEncontrado);
-       }
-//       else{
-//           
-//       }
-   
+       } 
    }
     
     public void editar(String oldValue, String newValue, String columnName, String idRow){
           
-   // System.out.println(idRow);
      FabricanteDAO fabDao = new FabricanteDAO();
      boolean findAndEdited = fabDao.updatePorId(Integer.parseInt(idRow), columnName, newValue);
      if(findAndEdited){
@@ -102,9 +94,7 @@ public class InternalListagemFabricantesController {
      }
      else{
         view.exibeMsg("Campo nao pode ser editado!, somente é possivel campos sem (*)");
-     }
-  
-       
+     }    
     }
     
     
